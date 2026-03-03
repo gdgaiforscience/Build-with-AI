@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Background – Build with AI</title>
+<title>intro – Build with AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -42,9 +77,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3211f741165a238cffd4fec0c0c48683.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-bc74742aab3ed6b1f23168253862509e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3211f741165a238cffd4fec0c0c48683.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bf780066b1fca8c22222318b3da0bfdb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e5eeef9e8c139ec4f16a8aa0ad0425fe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-bf780066b1fca8c22222318b3da0bfdb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -294,39 +329,684 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#benchmarks" id="toc-benchmarks" class="nav-link active" data-scroll-target="#benchmarks">Benchmarks</a></li>
+  <ul class="collapse">
+  <li><a href="#build-with-ai---python-and-ai-fundamentals" id="toc-build-with-ai---python-and-ai-fundamentals" class="nav-link active" data-scroll-target="#build-with-ai---python-and-ai-fundamentals"><strong>Build with AI - Python and AI Fundamentals</strong></a>
+  <ul class="collapse">
+  <li><a href="#workshop-goals" id="toc-workshop-goals" class="nav-link" data-scroll-target="#workshop-goals">Workshop Goals:</a></li>
+  </ul></li>
+  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">Contents</a>
+  <ul class="collapse">
+  <li><a href="#notes-on-using-google-colab" id="toc-notes-on-using-google-colab" class="nav-link" data-scroll-target="#notes-on-using-google-colab">Notes on using Google Colab:</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#variables-and-data-types" id="toc-variables-and-data-types" class="nav-link" data-scroll-target="#variables-and-data-types">Variables and Data Types</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/gdgaiforscience/Build-with-AI/edit/main/session/01-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.dev/gdgaiforscience/Build-with-AI/blob/main/session/01-intro.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Background</h1>
+
+
+
+<section id="build-with-ai---python-and-ai-fundamentals" class="level1">
+<h1><strong>Build with AI - Python and AI Fundamentals</strong></h1>
+<p><strong>Instructors:</strong> * Dr Nate Butterworth (Google XWF)</p>
+<p><strong>Date:</strong> May 7, 2025</p>
+<section id="workshop-goals" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-goals">Workshop Goals:</h2>
+<ul>
+<li>Learn basic Python syntax, data types, and control flow.</li>
+<li>Get introduced to essential libraries like NumPy, Pandas, scikit-learn.</li>
+<li>Perform basic Exploratory Data Analysis and Visualisation using Matplotlib and Seaborn.</li>
+<li>Identify appropriate Machine Learning pipelines for the right workload.</li>
+<li>Understand the concept of various “AI” workflows including Computer Vision and Large Language Model tasks.</li>
+<li>Learn how you to apply the right tool for the job.</li>
+<li>Embrace active participation, learning by doing, in a friendly, inclusive environment.</li>
+</ul>
+</section>
+</section>
+<section id="contents" class="level1">
+<h1>Contents</h1>
+<ul>
+<li><a href="#mod1">May 7: Python Fundamentals</a></li>
+<li><a href="">Session 2: Machine learning with scikit-learn ↗</a></li>
+<li><a href="">Session 3: LLM Workflows with Gemma and Gemini ↗</a></li>
+<li><a href="">May 14: Fine Tuning and RAG ↗</a></li>
+<li><a href="">May 21: AI Agents for Research ↗</a></li>
+<li><a href="">May 28: SAI-Assisted Research with Antigravity ↗</a></li>
+</ul>
+<p>All sessions are independent and can be run in isolation.</p>
+<section id="notes-on-using-google-colab" class="level2">
+<h2 class="anchored" data-anchor-id="notes-on-using-google-colab">Notes on using Google Colab:</h2>
+<ul>
+<li><strong>Cells:</strong> Notebooks are made of cells. Text cells (like this one!) for explanations, and Code cells for Python code.</li>
+<li><strong>Running Code Cells:</strong>
+<ul>
+<li>Click the “Play” button to the left of the cell.</li>
+<li>Press <code>Shift + Enter</code> to run the current cell and move to the next.</li>
+</ul></li>
+<li><strong>Saving:</strong> Your work is usually auto-saved to your Google Drive. You can also do <code>File &gt; Save a copy in Drive</code>.</li>
+</ul>
+<p><a name="mod1"></a> # <strong>Session 1: Python Fundamentals</strong></p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Learn basic Python syntax, data types, and control flow.</li>
+</ul>
+<section id="note-we-wont-explicitly-cover-best-practice-coding-style-and-conventions-read-more-in-the-python-style-guide." class="level4">
+<h4 class="anchored" data-anchor-id="note-we-wont-explicitly-cover-best-practice-coding-style-and-conventions-read-more-in-the-python-style-guide.">💡 Note: we won’t explicitly cover best-practice coding style and conventions, read more in the <a href="https://peps.python.org/pep-0008/">Python Style Guide</a>.</h4>
+</section>
+</section>
+<section id="variables-and-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="variables-and-data-types">Variables and Data Types</h2>
+<p><strong>What are variables?</strong> Think of variables as labels for containers that store data. You assign a value to a variable using the equals sign <code>=</code>.</p>
+<p><strong>Naming conventions:</strong> * Names should be descriptive (e.g., <code>sample_id</code> instead of <code>s</code>). * Start with a letter or underscore (<code>_</code>). * Can contain letters, numbers, and underscores. * Case-sensitive (<code>sample_id</code> is different from <code>Sample_ID</code>). * Avoid using Python keywords (e.g., <code>print</code>, <code>if</code>, <code>for</code>).</p>
+<p><strong>Common Data Types:</strong> * <strong>Integer (<code>int</code>):</strong> Whole numbers, e.g., <code>42</code>, <code>-10</code>. * <strong>Float (<code>float</code>):</strong> Numbers with a decimal point, e.g., <code>3.14</code>, <code>-0.001</code>, <code>2.0</code>. * <strong>String (<code>str</code>):</strong> Text, enclosed in single quotes (<code>'...'</code>) or double quotes (<code>"..."</code>), e.g., <code>"DNA"</code>, <code>'Escherichia coli'</code>. * <strong>Boolean (<code>bool</code>):</strong> Represents truth values, either <code>True</code> or <code>False</code>.</p>
+<p>We can use the <code>type()</code> function to check the data type of a variable.</p>
+<div id="cell-1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a0e97b1f-f27a-4c3c-c74a-a8e71f2f2cc8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 1.1: Storing Scientific Data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create variables for a fictitious experiment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>project_name <span class="op">=</span> <span class="st">"Metabolic Response Study"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>number_of_samples <span class="op">=</span> <span class="dv">96</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ph_level <span class="op">=</span> <span class="fl">7.4</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>results_preliminary <span class="op">=</span> <span class="va">True</span> <span class="co"># Boolean: True or False</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the variables</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Project Name:"</span>, project_name)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of Samples:"</span>, number_of_samples)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"pH Level:"</span>, ph_level)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Are results preliminary?"</span>, results_preliminary)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the data types of these variables</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Data type of project_name:"</span>, <span class="bu">type</span>(project_name))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type of number_of_samples:"</span>, <span class="bu">type</span>(number_of_samples))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type of ph_level:"</span>, <span class="bu">type</span>(ph_level))</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type of results_preliminary:"</span>, <span class="bu">type</span>(results_preliminary))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: Ask participants to create their own variables for a hypothetical experiment they might run.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Project Name: Metabolic Response Study
+Number of Samples: 96
+pH Level: 7.4
+Are results preliminary? True
+
+Data type of project_name: &lt;class 'str'&gt;
+Data type of number_of_samples: &lt;class 'int'&gt;
+Data type of ph_level: &lt;class 'float'&gt;
+Data type of results_preliminary: &lt;class 'bool'&gt;</code></pre>
 </div>
+</div>
+<section id="basic-operators" class="level3">
+<h3 class="anchored" data-anchor-id="basic-operators">Basic Operators</h3>
+<p>Python supports various <a href="https://docs.python.org/3/library/operator.html">operators</a> for performing calculations and comparisons.</p>
+<p><strong>Arithmetic Operators:</strong> * <code>+</code> (addition) * <code>-</code> (subtraction) * <code>*</code> (multiplication) * <code>/</code> (division - always results in a float) * <code>//</code> (floor division - discards the fractional part) * <code>%</code> (modulo - remainder of a division) * <code>**</code> (exponentiation - raise to the power of)</p>
+<p><strong>Comparison Operators:</strong> (Result in a Boolean: <code>True</code> or <code>False</code>) * <code>==</code> (equal to) * <code>!=</code> (not equal to) * <code>&gt;</code> (greater than) * <code>&lt;</code> (less than) * <code>&gt;=</code> (greater than or equal to) * <code>&lt;=</code> (less than or equal to)</p>
+<p><strong>Logical Operators:</strong> (Combine Boolean values) * <code>and</code> (True if both are True) * <code>or</code> (True if at least one is True) * <code>not</code> (Inverts the Boolean value)</p>
+<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="932147b2-3ea2-4a8f-c797-2b9b4cd28f9a">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 1.2: Calculations for the Lab</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dilution calculation: C1V1 = C2V2  =&gt;  C2 = (C1 * V1) / V2</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>initial_concentration_M <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># Molarity (e.g., mol/L)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>initial_volume_mL <span class="op">=</span> <span class="fl">10.0</span>     <span class="co"># mL</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>final_volume_mL <span class="op">=</span> <span class="fl">50.0</span>       <span class="co"># mL</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>final_concentration_M <span class="op">=</span> (initial_concentration_M <span class="op">*</span> initial_volume_mL) <span class="op">/</span> final_volume_mL</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Final concentration (M):"</span>, final_concentration_M)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature conversion: Fahrenheit = (Celsius * 9/5) + 32</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>celsius_temp <span class="op">=</span> <span class="fl">25.0</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>fahrenheit_temp <span class="op">=</span> (celsius_temp <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(celsius_temp, <span class="st">"C is"</span>, fahrenheit_temp, <span class="st">"F"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if optical density (OD) is within range</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>od_reading <span class="op">=</span> <span class="fl">0.65</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>min_od <span class="op">=</span> <span class="fl">0.2</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>max_od <span class="op">=</span> <span class="fl">0.8</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>is_within_range <span class="op">=</span> (od_reading <span class="op">&gt;=</span> min_od) <span class="kw">and</span> (od_reading <span class="op">&lt;=</span> max_od)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is OD reading"</span>, od_reading, <span class="st">"within acceptable range ("</span>, min_od, <span class="st">"-"</span>, max_od, <span class="st">")?"</span>, is_within_range)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: Encourage learners to change the input values and see how the outputs change.</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Discuss operator precedence if it comes up naturally.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Final concentration (M): 0.4
+25.0 C is 77.0 F
+Is OD reading 0.65 within acceptable range ( 0.2 - 0.8 )? True</code></pre>
+</div>
+</div>
+</section>
+<section id="introduction-to-data-structures-lists" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-data-structures-lists">Introduction to Data Structures: Lists</h3>
+<p>A <strong>list</strong> is an ordered, mutable (changeable) collection of items. One of the many <a href="https://docs.python.org/3/tutorial/datastructures.html">data structures</a> found in Python (and other programming languages). Lists can contain items of different data types.</p>
+<ul>
+<li><strong>Creating lists:</strong> <code>my_list = [item1, item2, item3]</code></li>
+<li><strong>Accessing elements:</strong> Use square brackets <code>[]</code> with an index. Python is 0-indexed, meaning the first item is at index <code>0</code>.
+<ul>
+<li><code>my_list[0]</code> gives the first item.</li>
+<li><code>my_list[-1]</code> gives the last item.</li>
+</ul></li>
+<li><strong>Slicing:</strong> Get a sub-list: <code>my_list[start_index:end_index]</code> (end_index is exclusive).</li>
+<li><strong>Modifying lists:</strong>
+<ul>
+<li><code>append(item)</code>: Adds an item to the end.</li>
+<li><code>insert(index, item)</code>: Inserts an item at a specific index.</li>
+<li><code>remove(item)</code>: Removes the first occurrence of an item.</li>
+<li><code>pop(index)</code>: Removes and returns the item at an index (default is the last item).</li>
+</ul></li>
+<li><strong>Length of a list:</strong> <code>len(my_list)</code></li>
+</ul>
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3948d2ac-7e6c-4345-cc4c-a6218c87a919">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 1.3: Managing Experimental Readings</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># List of temperature readings</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>temperature_readings_celsius <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">22.7</span>, <span class="fl">22.8</span>, <span class="fl">23.1</span>, <span class="fl">22.9</span>, <span class="fl">23.5</span>, <span class="fl">100.2</span>] <span class="co"># Oops, one looks wrong!</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Initial readings:"</span>, temperature_readings_celsius)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the first and last readings</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>first_reading <span class="op">=</span> temperature_readings_celsius[<span class="dv">0</span>]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>last_reading <span class="op">=</span> temperature_readings_celsius[<span class="op">-</span><span class="dv">1</span>] <span class="co"># Python's way to get the last item</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First reading:"</span>, first_reading)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last reading (before correction):"</span>, last_reading)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new reading</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>temperature_readings_celsius.append(<span class="fl">23.0</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After appending 23.0:"</span>, temperature_readings_celsius)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove an erroneous reading (e.g., 100.2)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>temperature_readings_celsius.remove(<span class="fl">100.2</span>) <span class="co"># This removes the first occurrence</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># If you don't know the value but know the index (e.g. index 6 was wrong):</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># temperature_readings_celsius.pop(6)</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After removing 100.2:"</span>, temperature_readings_celsius)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the number of readings taken</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>number_of_readings <span class="op">=</span> <span class="bu">len</span>(temperature_readings_celsius)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of readings:"</span>, number_of_readings)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing: Get the first three readings</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>first_three_readings <span class="op">=</span> temperature_readings_celsius[<span class="dv">0</span>:<span class="dv">3</span>] <span class="co"># index 3 is not included</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First three readings:"</span>, first_three_readings)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: Show how indexing beyond the list length causes an error.</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Explain 0-indexing carefully. Use analogies like floors in a building if helpful.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Initial readings: [22.5, 22.7, 22.8, 23.1, 22.9, 23.5, 100.2]
+First reading: 22.5
+Last reading (before correction): 100.2
+After appending 23.0: [22.5, 22.7, 22.8, 23.1, 22.9, 23.5, 100.2, 23.0]
+After removing 100.2: [22.5, 22.7, 22.8, 23.1, 22.9, 23.5, 23.0]
+Number of readings: 7
+First three readings: [22.5, 22.7, 22.8]</code></pre>
+</div>
+</div>
+</section>
+<section id="conditional-statements-if-else" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-statements-if-else">Conditional Statements (If-Else)</h3>
+<p>Conditional statements allow your program to make decisions based on whether certain conditions are <code>True</code> or <code>False</code>.</p>
+<p><strong>Syntax:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition1:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to execute if condition1 is True</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> condition2:  <span class="co"># Optional: "else if"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to execute if condition1 is False and condition2 is True</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:             <span class="co"># Optional</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to execute if all preceding conditions are False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Indentation is crucial in Python! It defines blocks of code.</p>
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3d53a482-308c-4059-929e-bbfa4b89b380">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 2.1: Classifying Results</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: P-value classification</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> <span class="fl">0.065</span> <span class="co"># Try changing this value (e.g., 0.03, 0.15)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value is: </span><span class="sc">{</span>p_value<span class="sc">}</span><span class="ss">"</span>) <span class="co"># f-strings are a nice way to format strings!</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> p_value <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Result is statistically significant."</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> p_value <span class="op">&lt;</span> <span class="fl">0.1</span>: <span class="co"># This means 0.05 &lt;= p_value &lt; 0.1</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Result is approaching significance (monitor closely)."</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Result is not statistically significant."</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: Cell culture confluence</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>confluence_percentage <span class="op">=</span> <span class="dv">85</span> <span class="co"># Try 95, 60</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Cell confluence: </span><span class="sc">{</span>confluence_percentage<span class="sc">}</span><span class="ss">%"</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> confluence_percentage <span class="op">&gt;</span> <span class="dv">90</span>:</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ready to split cells."</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> confluence_percentage <span class="op">&gt;=</span> <span class="dv">70</span>: <span class="co"># 70 to 90 (inclusive of 70, exclusive of &gt;90 handled above)</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Monitor culture closely."</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Continue incubation."</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: Emphasize the importance of indentation.</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Ask learners to trace the logic with different input values.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value is: 0.065
+Result is approaching significance (monitor closely).
+
+Cell confluence: 85%
+Monitor culture closely.</code></pre>
+</div>
+</div>
+</section>
+<section id="loops" class="level3">
+<h3 class="anchored" data-anchor-id="loops">Loops</h3>
+<p>Loops are used to repeat a block of code multiple times.</p>
+<p><strong><code>for</code> loops:</strong> Iterate over a sequence (like a list, string, or a range of numbers).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> variable_name <span class="kw">in</span> sequence:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to execute for each item in the sequence</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>range()</code> function is useful for generating sequences of numbers: * <code>range(stop)</code>: 0 up to (but not including) <code>stop</code>. E.g., <code>range(5)</code> -&gt; 0, 1, 2, 3, 4 * <code>range(start, stop)</code>: <code>start</code> up to (but not including) <code>stop</code>. * <code>range(start, stop, step)</code>: <code>start</code> up to <code>stop</code>, incrementing by <code>step</code>.</p>
+<p><strong><code>while</code> loops:</strong> Repeat code as long as a condition is <code>True</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> condition:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to execute</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># IMPORTANT: Ensure the condition eventually becomes False, or you'll have an infinite loop!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="13380014-9f6c-436f-ad9e-e11c825e9563">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 2.2: Processing Data Collections</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: `for` loop with a list of gene names</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>gene_names <span class="op">=</span> [<span class="st">"TP53"</span>, <span class="st">"BRCA1"</span>, <span class="st">"EGFR"</span>, <span class="st">"MYC"</span>]</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Analyzing genes:"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> gene <span class="kw">in</span> gene_names:</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Processing gene: </span><span class="sc">{</span>gene<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: `for` loop with `range()` for a time-course experiment</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Simulating time-course experiment:"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>number_of_time_points <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> time_point <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, number_of_time_points <span class="op">+</span> <span class="dv">1</span>): <span class="co"># range(1, 6) will give 1, 2, 3, 4, 5</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Time point </span><span class="sc">{</span>time_point<span class="sc">}</span><span class="ss">: Taking measurement..."</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 3: `while` loop to simulate a reaction</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's say we want to reach a target concentration of at least 0.9</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>current_concentration <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>target_concentration <span class="op">=</span> <span class="fl">0.9</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>reaction_step <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Simulating reaction until target concentration is met:"</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> current_concentration <span class="op">&lt;</span> target_concentration:</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    reaction_step <span class="op">+=</span> <span class="dv">1</span> <span class="co"># Same as reaction_step = reaction_step + 1</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    current_concentration <span class="op">+=</span> <span class="fl">0.08</span> <span class="co"># Simulate an increase in concentration</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># To avoid too many print statements if values are off, cap the steps for this demo</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> reaction_step <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Stopping: Took too many steps (safeguard)."</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span> <span class="co"># Exit the loop immediately</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Step </span><span class="sc">{</span>reaction_step<span class="sc">}</span><span class="ss">: Current concentration = </span><span class="sc">{</span>current_concentration<span class="sc">:.2f}</span><span class="ss">"</span>) <span class="co"># .2f formats float to 2 decimal places</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> current_concentration <span class="op">&gt;=</span> target_concentration:</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Target concentration of </span><span class="sc">{</span>target_concentration<span class="sc">}</span><span class="ss"> reached or exceeded at step </span><span class="sc">{</span>reaction_step<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Target concentration not reached after </span><span class="sc">{</span>reaction_step<span class="sc">}</span><span class="ss"> steps."</span>)</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: Discuss infinite loops and how to break them in Colab (Interrupt execution button).</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="co"># For the `while` loop, highlight the part that changes the condition (`current_concentration += 0.08`).</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analyzing genes:
+  Processing gene: TP53
+  Processing gene: BRCA1
+  Processing gene: EGFR
+  Processing gene: MYC
+
+Simulating time-course experiment:
+Time point 1: Taking measurement...
+Time point 2: Taking measurement...
+Time point 3: Taking measurement...
+Time point 4: Taking measurement...
+Time point 5: Taking measurement...
+
+Simulating reaction until target concentration is met:
+Step 1: Current concentration = 0.58
+Step 2: Current concentration = 0.66
+Step 3: Current concentration = 0.74
+Step 4: Current concentration = 0.82
+Step 5: Current concentration = 0.90
+Step 6: Current concentration = 0.98
+Target concentration of 0.9 reached or exceeded at step 6.</code></pre>
+</div>
+</div>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<p>Functions are named, reusable blocks of code that perform a specific task. They help make your code more organized, readable, and efficient.</p>
+<p><strong>Defining a function:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameter1, parameter2, ...):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Docstring: Explain what the function does, its parameters, and what it returns.</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">    This is a good practice!</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code block for the function</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> some_value  <span class="co"># Optional: to send a result back</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>def</code> keyword starts a function definition.</li>
+<li><code>function_name</code>: Choose a descriptive name.</li>
+<li><code>parameters</code> (optional): Input values the function works with.</li>
+<li><strong>Docstring:</strong> A string literal right after the function header, used to document the function. Access with <code>help(function_name)</code>.</li>
+<li><code>return</code> statement (optional): Sends a value back to the part of the code that called the function. If omitted, the function returns <code>None</code>.</li>
+</ul>
+<p><strong>Calling a function:</strong> <code>result = function_name(argument1, argument2, ...)</code> Arguments are the actual values passed to the function’s parameters.</p>
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="4d124176-9221-4281-ed61-312b5305d20c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code cell</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 2.3: Creating Reusable Scientific Tools</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to convert Celsius to Fahrenheit</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(celsius):</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Converts temperature from Celsius to Fahrenheit.</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">        celsius (float or int): Temperature in Celsius.</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co">        float: Temperature in Fahrenheit.</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    fahrenheit <span class="op">=</span> (celsius <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fahrenheit</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>temp_c <span class="op">=</span> <span class="fl">25.0</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>temp_f <span class="op">=</span> celsius_to_fahrenheit(temp_c)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>temp_c<span class="sc">}</span><span class="ss">°C is equal to </span><span class="sc">{</span>temp_f<span class="sc">}</span><span class="ss">°F"</span>)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>temp_c_boiling <span class="op">=</span> <span class="fl">100.0</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Water boils at </span><span class="sc">{</span>celsius_to_fahrenheit(temp_c_boiling)<span class="sc">}</span><span class="ss">°F at sea level."</span>)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate the average of a list of numbers</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_average(numbers_list):</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculates the average of a list of numbers.</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="co">        numbers_list (list of float or int): A list of numbers.</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a><span class="co">        float: The average of the numbers, or 0 if the list is empty.</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> numbers_list: <span class="co"># Check if the list is empty to avoid division by zero</span></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">0.0</span></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>    total_sum <span class="op">=</span> <span class="bu">sum</span>(numbers_list) <span class="co"># sum() is a built-in Python function</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="bu">len</span>(numbers_list)</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>    average <span class="op">=</span> total_sum <span class="op">/</span> count</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> average</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the average function with our earlier temperature readings</span></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a><span class="co"># (Let's redefine it here for self-containment of the cell)</span></span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>temperature_readings_celsius <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">22.7</span>, <span class="fl">22.8</span>, <span class="fl">23.1</span>, <span class="fl">22.9</span>, <span class="fl">23.5</span>, <span class="fl">23.0</span>]</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>avg_temp <span class="op">=</span> calculate_average(temperature_readings_celsius)</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Average temperature: </span><span class="sc">{</span>avg_temp<span class="sc">:.2f}</span><span class="ss">°C"</span>)</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>empty_list <span class="op">=</span> []</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>avg_empty <span class="op">=</span> calculate_average(empty_list)</span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average of an empty list: </span><span class="sc">{</span>avg_empty<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Show how to access the docstring</span></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(celsius_to_fahrenheit)</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a><span class="co"># print(celsius_to_fahrenheit.__doc__) # Another way</span></span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: Explain local scope (variables inside a function are generally not accessible outside).</span></span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Emphasize the DRY principle (Don't Repeat Yourself) and how functions help.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>25.0°C is equal to 77.0°F
+Water boils at 212.0°F at sea level.
+
+Average temperature: 22.93°C
+Average of an empty list: 0.0
+Help on function celsius_to_fahrenheit in module __main__:
+
+celsius_to_fahrenheit(celsius)
+    Converts temperature from Celsius to Fahrenheit.
+
+    Args:
+        celsius (float or int): Temperature in Celsius.
+
+    Returns:
+        float: Temperature in Fahrenheit.
+</code></pre>
+</div>
+</div>
+</section>
+<section id="introduction-to-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-libraries">Introduction to Libraries</h3>
+<p>Python’s power comes from its extensive collection of <strong>libraries</strong> (also called modules or packages). These are collections of pre-written code that provide additional functionality.</p>
+<p><strong>Importing libraries:</strong> * <code>import library_name</code>: Makes the whole library available. Access functions like <code>library_name.function()</code>. * <code>import library_name as alias</code>: Imports the library and gives it a shorter alias (e.g., <code>import numpy as np</code>). This is very common. * <code>from library_name import specific_function_or_item</code>: Imports only specific parts of a library. You can then use them directly, e.g., <code>specific_function()</code>. * <code>from library_name import *</code>: Imports everything (generally discouraged for larger libraries as it can lead to name conflicts).</p>
+<p>We will be using several libraries commonly used in scientific computing starting with NumPy and Pandas.</p>
+<p>If these libraries are not installed, you can install them in Colab (or locally) using <code>!pip install library_name</code>.</p>
+<p>Check out <a href="https://pypi.org/">PyPi</a> for lots of packages!</p>
+<div id="cell-13" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import NumPy (Numerical Python)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># np is the standard alias for NumPy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="numpy-for-numerical-data-brief-introduction" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-for-numerical-data-brief-introduction">NumPy for Numerical Data (Brief Introduction)</h3>
+<p><a href="https://numpy.org/"><strong>NumPy</strong></a> is the fundamental package for numerical computation in Python. It provides: * A powerful N-dimensional array object (the <code>ndarray</code>). * Sophisticated (broadcasting) functions. * Tools for integrating C/C++ and Fortran code. * Useful linear algebra, Fourier transform, and random number capabilities.</p>
+<p>The core of NumPy is the <code>ndarray</code>. NumPy arrays are more efficient for numerical operations than Python lists, especially for large datasets. They are also homogenous, meaning all elements must be of the same data type.</p>
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="cd5e1d68-8930-455f-8f62-2fad206cea1d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code cell</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 3.1: Working with Numerical Arrays</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Our temperature readings from before</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>temperature_list_py <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">22.7</span>, <span class="fl">22.8</span>, <span class="fl">23.1</span>, <span class="fl">22.9</span>, <span class="fl">23.5</span>, <span class="fl">23.0</span>]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a NumPy array from the Python list</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>temperature_array_np <span class="op">=</span> np.array(temperature_list_py)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NumPy array of temperatures (Celsius):"</span>, temperature_array_np)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Type of the array:"</span>, <span class="bu">type</span>(temperature_array_np))</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type of elements in the array:"</span>, temperature_array_np.dtype)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform a simple calculation on the array (element-wise operation)</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert all Celsius readings to Kelvin (Kelvin = Celsius + 273.15)</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>kelvin_temperatures <span class="op">=</span> temperature_array_np <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temperatures in Kelvin:"</span>, kelvin_temperatures)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co"># NumPy makes math operations easy:</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>mean_temp_np <span class="op">=</span> np.mean(temperature_array_np)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>std_dev_temp_np <span class="op">=</span> np.std(temperature_array_np)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>max_temp_np <span class="op">=</span> np.<span class="bu">max</span>(temperature_array_np)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Using NumPy functions:"</span>)</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean temperature: </span><span class="sc">{</span>mean_temp_np<span class="sc">:.2f}</span><span class="ss">°C"</span>)</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Standard deviation: </span><span class="sc">{</span>std_dev_temp_np<span class="sc">:.2f}</span><span class="ss">°C"</span>)</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum temperature: </span><span class="sc">{</span>max_temp_np<span class="sc">:.2f}</span><span class="ss">°C"</span>)</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare with manual calculation or Python's sum()/len() for mean</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="co"># average_python = sum(temperature_list_py) / len(temperature_list_py)</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"Mean temperature (Python list): {average_python:.2f}°C")</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: Briefly mention that operations on NumPy arrays are usually much faster than on Python lists for large datasets due to optimized C code underneath.</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Show creating an array with a specific dtype: np.array([1, 2, 3], dtype=float)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NumPy array of temperatures (Celsius): [22.5 22.7 22.8 23.1 22.9 23.5 23. ]
+Type of the array: &lt;class 'numpy.ndarray'&gt;
+Data type of elements in the array: float64
+Temperatures in Kelvin: [295.65 295.85 295.95 296.25 296.05 296.65 296.15]
+
+Using NumPy functions:
+Mean temperature: 22.93°C
+Standard deviation: 0.30°C
+Maximum temperature: 23.50°C</code></pre>
+</div>
+</div>
+<div id="cell-16" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Pandas (Python Data Analysis Library)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># pd is the standard alias for Pandas</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="pandas-for-tabular-data-brief-introduction-to-exploratory-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="pandas-for-tabular-data-brief-introduction-to-exploratory-data-analysis">Pandas for Tabular Data (Brief Introduction to Exploratory Data Analysis)</h3>
+<p><strong>Pandas</strong> is a powerful, open-source library built on top of NumPy, providing fast, flexible, and expressive data structures designed to make working with “Panel Data” or “relational” or “labeled” data (like tables) both easy and intuitive. It is the go-to tool for Python-aligned scientits starting with EDA.</p>
+<p><strong>Core Data Structures:</strong> * <strong>Series:</strong> A one-dimensional labeled array capable of holding any data type (integers, strings, floating point numbers, Python objects, etc.). Think of it as a single column in a table. * <strong>DataFrame:</strong> A two-dimensional, size-mutable, and potentially heterogeneous tabular data structure with labeled axes (rows and columns). Think of it as a spreadsheet or SQL table.</p>
+<p><strong>Common tasks with Pandas:</strong> * Reading and writing data from various file formats (CSV, Excel, SQL databases, etc.). * Cleaning, filtering, and transforming data. * Analyzing and summarizing data. * Merging and joining datasets. * Basic plotting * Exploratory Data Analysis (EDA)</p>
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="06ef70d9-57aa-479f-f97e-42eb6b12192f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 3.2: Exploring a Small Dataset</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dictionary with some sample experimental data</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionaries are another Python data structure: key-value pairs.</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>data_dict <span class="op">=</span> {</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'SampleID'</span>: [<span class="st">'S1'</span>, <span class="st">'S2'</span>, <span class="st">'S3'</span>, <span class="st">'S4'</span>, <span class="st">'S5'</span>],</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Treatment'</span>: [<span class="st">'Control'</span>, <span class="st">'DrugA'</span>, <span class="st">'Control'</span>, <span class="st">'DrugB'</span>, <span class="st">'DrugA'</span>],</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Measurement_OD'</span>: [<span class="fl">0.15</span>, <span class="fl">0.78</span>, <span class="fl">0.20</span>, <span class="fl">0.95</span>, <span class="fl">0.65</span>],</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Replicate'</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This is a Python dictionary:"</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_dict)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert this dictionary into a Pandas DataFrame</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>df_experiment <span class="op">=</span> pd.DataFrame(data_dict)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">This is a Pandas DataFrame:"</span>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_experiment) <span class="co"># Colab often provides a nice HTML rendering for DataFrames</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic DataFrame inspection:</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">First 3 rows of the DataFrame (.head(3)):"</span>)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_experiment.head(<span class="dv">3</span>))</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Last 2 rows of the DataFrame (.tail(2)):"</span>)</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_experiment.tail(<span class="dv">2</span>))</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Information about the DataFrame (.info()):"</span>)</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>df_experiment.info() <span class="co"># Gives data types, non-null counts, memory usage</span></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Descriptive statistics for numerical columns (.describe()):"</span>)</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_experiment.describe())</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Shape of the DataFrame (rows, columns) (.shape):"</span>)</span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_experiment.shape)</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing a single column (returns a Pandas Series)</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>treatment_column <span class="op">=</span> df_experiment[<span class="st">'Treatment'</span>]</span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">The 'Treatment' column (a Pandas Series):"</span>)</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(treatment_column)</span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Unique values in the 'Treatment' column:"</span>)</span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_experiment[<span class="st">'Treatment'</span>].unique())</span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic filtering: Samples treated with DrugA</span></span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>drug_a_samples <span class="op">=</span> df_experiment[df_experiment[<span class="st">'Treatment'</span>] <span class="op">==</span> <span class="st">'DrugA'</span>]</span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Samples treated with DrugA:"</span>)</span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(drug_a_samples)</span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor Note: This is a very brief intro. The goal is to show what a DataFrame is and how to do basic manipulations.</span></span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Suggestion for self-study:</span></span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="co"># "You can load your own data from a CSV file using `pd.read_csv('your_file.csv')`."</span></span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="co"># "If you have a CSV file on your computer, you can upload it to Colab using the file browser on the left panel, then read it."</span></span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a><span class="co"># For example:</span></span>
+<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a><span class="co"># from google.colab import files</span></span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a><span class="co"># uploaded = files.upload() # This will open a dialog</span></span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a><span class="co"># import io</span></span>
+<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a><span class="co"># df_from_csv = pd.read_csv(io.BytesIO(uploaded['your_file_name.csv']))</span></span>
+<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a><span class="co"># print(df_from_csv.head())</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This is a Python dictionary:
+{'SampleID': ['S1', 'S2', 'S3', 'S4', 'S5'], 'Treatment': ['Control', 'DrugA', 'Control', 'DrugB', 'DrugA'], 'Measurement_OD': [0.15, 0.78, 0.2, 0.95, 0.65], 'Replicate': [1, 1, 2, 1, 2]}
+
+This is a Pandas DataFrame:
+  SampleID Treatment  Measurement_OD  Replicate
+0       S1   Control            0.15          1
+1       S2     DrugA            0.78          1
+2       S3   Control            0.20          2
+3       S4     DrugB            0.95          1
+4       S5     DrugA            0.65          2
+
+First 3 rows of the DataFrame (.head(3)):
+  SampleID Treatment  Measurement_OD  Replicate
+0       S1   Control            0.15          1
+1       S2     DrugA            0.78          1
+2       S3   Control            0.20          2
+
+Last 2 rows of the DataFrame (.tail(2)):
+  SampleID Treatment  Measurement_OD  Replicate
+3       S4     DrugB            0.95          1
+4       S5     DrugA            0.65          2
+
+Information about the DataFrame (.info()):
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 4 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   SampleID        5 non-null      object 
+ 1   Treatment       5 non-null      object 
+ 2   Measurement_OD  5 non-null      float64
+ 3   Replicate       5 non-null      int64  
+dtypes: float64(1), int64(1), object(2)
+memory usage: 292.0+ bytes
+
+Descriptive statistics for numerical columns (.describe()):
+       Measurement_OD  Replicate
+count        5.000000   5.000000
+mean         0.546000   1.400000
+std          0.355429   0.547723
+min          0.150000   1.000000
+25%          0.200000   1.000000
+50%          0.650000   1.000000
+75%          0.780000   2.000000
+max          0.950000   2.000000
+
+Shape of the DataFrame (rows, columns) (.shape):
+(5, 4)
+
+The 'Treatment' column (a Pandas Series):
+0    Control
+1      DrugA
+2    Control
+3      DrugB
+4      DrugA
+Name: Treatment, dtype: object
+
+Unique values in the 'Treatment' column:
+['Control' 'DrugA' 'DrugB']
+
+Samples treated with DrugA:
+  SampleID Treatment  Measurement_OD  Replicate
+1       S2     DrugA            0.78          1
+4       S5     DrugA            0.65          2</code></pre>
+</div>
+</div>
+</section>
+<section id="resources-for-continued-learning" class="level3">
+<h3 class="anchored" data-anchor-id="resources-for-continued-learning">Resources for Continued Learning:</h3>
+<ul>
+<li><strong>Python:</strong>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/">Official Python Tutorial</a></li>
+<li><a href="https://developers.google.com/edu/python">Google’s Python Class</a></li>
+</ul></li>
+<li><strong>The Carpentries:</strong>
+<ul>
+<li><a href="https://software-carpentry.org/lessons/">Software Carpentry (Python, Git, Shell)</a></li>
+<li><a href="https://datacarpentry.org/lessons/">Data Carpentry (Python/R for specific domains)</a></li>
+<li><a href="https://www.kaggle.com/learn">Kaggle Learn Courses</a> (Intro to ML, Deep Learning, etc.)</li>
+<li><a href="https://ai.google.dev/">Google AI for Developers</a></li>
+<li><a href="https://www.kaggle.com/models/google/gemma">Gemma on Kaggle</a> (to explore other Gemma variants)</li>
+<li><a href="https://www.tensorflow.org/tutorials">TensorFlow Tutorials</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="useful-python-packages" class="level3">
+<h3 class="anchored" data-anchor-id="useful-python-packages">Useful Python Packages:</h3>
+<ul>
+<li><strong>Data Science Libraries:</strong>
+<ul>
+<li><a href="https://numpy.org/doc/stable/">NumPy Documentation</a></li>
+<li><a href="https://pandas.pydata.org/docs/">Pandas Documentation</a></li>
+<li><a href="https://keras.io/guides/">Keras Documentation</a></li>
+<li><a href="https://scikit-learn.org/stable/">Scikit Learn Documentation</a></li>
+<li><a href="https://seaborn.pydata.org/">Seaborn Visualisation Documentation</a></li>
+<li><a href="https://matplotlib.org/">Matplotlib Visualisation Documentation</a></li>
+<li><a href="https://scipy.org/">Scipy technical computing Documentation</a></li>
+<li><a href="https://opencv.org/">OpenCV</a> (for computer vision)</li>
+</ul></li>
+<li><strong>Domain-specific libraries</strong>
+<ul>
+<li><a href="https://www.astropy.org/">Astropy</a> (Astronomy tools)</li>
+<li><a href="https://pymol.org/">PyMOL</a> (molecular visualization)</li>
+<li><a href="https://rasterio.readthedocs.io/en/stable/">Rasterio</a> (raster dataset toolkit)</li>
+</ul></li>
+</ul>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Welcome to Build with AI!</p>
-<section id="benchmarks" class="level2">
-<h2 class="anchored" data-anchor-id="benchmarks">Benchmarks</h2>
-
-
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -748,4 +1428,4 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gdgaiforscience/Build-with-AI/edit/main/session/01-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/gdgaiforscience/Build-with-AI/blob/main/session/01-intro.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
