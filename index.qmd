@@ -4,65 +4,46 @@ execute:
   output: false
 ---
 
-Do lots of fun stuff with AI
-Learn how to use Antigravity to:
+Master your AI journey with this 4-part workshop series designed for researchers and academics wanting to Build with AI. Throughout the series, attendees will learn foundational Python and data analysis skills, build Retrieval-Augmented Generation (RAG) pipelines to query custom knowledge bases, develop intelligent AI agents equipped with custom tools, and explore how to accelerate computational research using Google's Antigravity AI-assisted IDE.
 
-* do fun stuff
-* do hard stuff
+## Register
 
-## Watch the recording!
-
-Watch Rahul Sundar present the below content live: [https://youtu.be/34dS94ONuDM](https://youtu.be/34dS94ONuDM)
+Regiteer for the series at the [GDG AI for Science](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-python-and-ai-fundamentals/)
 
 ![ ](./aiforsci.png)
 
 This workshop is part of the [GDG AI for Science](https://gdg.community.dev/events/details/google-gdg-ai-for-science-india-presents-googles-antigravity-accelerating-research-and-scientific-pipelines) workshop series. Join the community (in [Australia](https://gdg.community.dev/gdg-ai-for-science-australia/), [Korea](https://gdg.community.dev/gdg-ai-for-science-korea/), [Japan](https://gdg.community.dev/gdg-ai-for-science-japan), or [India](https://gdg.community.dev/gdg-ai-for-science-india/)) for talks, events, collaborations and more.
 
 
+
+## When 
+Every Thursday in May:
+
+* May 7: Python and AI fundamentals
+* May 14: Tailoring LLMs: RAG and Fine-Tuning
+* May 21: AI Agents for Research
+* May 28: AI-Assisted Research with Antigravity 
+
 ## Target Audience
-This workshop is aimed at anyone that writes code for scientific research including:
+
+This workshop is aimed at anyone looking to accelerate their research with AI including:
 
 * Research students (undergrad, masters, PhD, etc)
-* Researchers requiring computational tools
+* Researchers requiring AI tools
 * Data Scientists and professionals supporting scientific projects
 
-## Requirements
-Before the session please download and install Antigravity for your system by following the instructions here: [https://antigravity.google/download](https://antigravity.google/download)
-
-**Prerequisites:**
-
-- Basic coding knowledge will be helpful.
-- A motivation to experiment
-- Familiarity with Visual Studio Code editor will be helpful otherwise this will be a crash-course
+Use cases will be grounded in typical scientific workloads. 
 
 
+## Requirements:
 
-# Welcome to Build with AI
-
-After installation, the first time you launch Antigravity you will answer a few basic configuration steps (all options can be be left as default and changed later) then you will have to login with your Google credentials. You can also change user-accounts later if needed.
-From there you will land in the VSCode IDE, and can open a Folder/Project immediately starting hacking!
-
-We will run through a few different examples for how you can use Antigravity.
+* A Google account to use Google Colab.
+* Basic familiarlity with Python (or join us for session 1 to get everything you need). 
+* **Bonus** - free cloud credits for every attendee!
 
 
-## Example 1: First prompt
+As our speakers are donating their time, we want to ensure a full and engaged event. Please reserve your spot only if you are committed to joining us for this workshop.
 
-You can immediately get started with a prompt in the Agent Manager sidebar or window
-```bash
-Your goal is to show if temperature has changed in Sydney, Australia.
-```
+## Recording
 
-Keep the conversation going now it has developed more context:
-```bash
-Your goal is to prove this using data and code
-```
-
-Make sure you have tools (like Python) installed and the correct environments are being used. Put comments into the generated artefacts to give it helpful context hints:
-```bash
-run the tests in conda environment oztemp
-```
-
-Keep the agent working with more complex tasks:
-```bash
-Please extend this to make an animated heatmap of Australia's Annual Mean Max Temperature
-```
+Will be available after the event.
