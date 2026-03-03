@@ -1,0 +1,69 @@
+---
+title: '**Antigravity for Science**'
+output-file: index.html
+execute: 
+  output: false
+---
+
+Do lots of fun stuff with AI
+Learn how to use Antigravity to:
+
+* do fun stuff
+* do hard stuff
+
+## Watch the recording!
+
+Watch Rahul Sundar present the below content live: [https://youtu.be/34dS94ONuDM](https://youtu.be/34dS94ONuDM)
+
+![ ](./aiforsci.png)
+
+This workshop is part of the [GDG AI for Science](https://gdg.community.dev/events/details/google-gdg-ai-for-science-india-presents-googles-antigravity-accelerating-research-and-scientific-pipelines) workshop series. Join the community (in [Australia](https://gdg.community.dev/gdg-ai-for-science-australia/), [Korea](https://gdg.community.dev/gdg-ai-for-science-korea/), [Japan](https://gdg.community.dev/gdg-ai-for-science-japan), or [India](https://gdg.community.dev/gdg-ai-for-science-india/)) for talks, events, collaborations and more.
+
+
+## Target Audience
+This workshop is aimed at anyone that writes code for scientific research including:
+
+* Research students (undergrad, masters, PhD, etc)
+* Researchers requiring computational tools
+* Data Scientists and professionals supporting scientific projects
+
+## Requirements
+Before the session please download and install Antigravity for your system by following the instructions here: [https://antigravity.google/download](https://antigravity.google/download)
+
+**Prerequisites:**
+
+- Basic coding knowledge will be helpful.
+- A motivation to experiment
+- Familiarity with Visual Studio Code editor will be helpful otherwise this will be a crash-course
+
+
+
+# Welcome to Build with AI
+
+After installation, the first time you launch Antigravity you will answer a few basic configuration steps (all options can be be left as default and changed later) then you will have to login with your Google credentials. You can also change user-accounts later if needed.
+From there you will land in the VSCode IDE, and can open a Folder/Project immediately starting hacking!
+
+We will run through a few different examples for how you can use Antigravity.
+
+
+## Example 1: First prompt
+
+You can immediately get started with a prompt in the Agent Manager sidebar or window
+```bash
+Your goal is to show if temperature has changed in Sydney, Australia.
+```
+
+Keep the conversation going now it has developed more context:
+```bash
+Your goal is to prove this using data and code
+```
+
+Make sure you have tools (like Python) installed and the correct environments are being used. Put comments into the generated artefacts to give it helpful context hints:
+```bash
+run the tests in conda environment oztemp
+```
+
+Keep the agent working with more complex tasks:
+```bash
+Please extend this to make an animated heatmap of Australia's Annual Mean Max Temperature
+```

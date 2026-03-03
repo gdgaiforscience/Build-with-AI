@@ -1,0 +1,30 @@
+project:
+  type: website
+  resources:
+    - styles.css
+
+website:
+  title: "Build with AI" 
+  navbar:
+    left:
+      - href: session/01-intro.qmd
+        text: Python
+  google-analytics:
+    tracking-id: "G-Z7E5C7LLKG"
+    storage: cookies
+    anonymize-ip: true
+  repo-url: https://github.com/gdgaiforscience/Build-with-AI
+  repo-actions: [edit]
+
+format:
+  html:
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    code-overflow: wrap
+    respect-user-color-scheme: true
+    theme:
+      light: flatly
+      dark: darkly
+
+
