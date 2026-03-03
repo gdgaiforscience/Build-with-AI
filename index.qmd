@@ -1,6 +1,5 @@
 ---
 title: '**Build with AI**'
-output-file: index.html
 execute: 
   output: false
 ---

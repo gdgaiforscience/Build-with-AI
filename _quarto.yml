@@ -9,6 +9,14 @@ website:
     left:
       - href: session/01-intro.ipynb
         text: Python
+      - href: session/02-a-finetune.ipynb
+        text: Finetuning
+      - href: session/02-b-RAG.ipynb
+        text: RAG
+      - href: session/03-agents.ipynb
+        text: Agents
+      - href: session/04-antigravity.ipynb
+        text: Antigravity
   google-analytics:
     tracking-id: "G-Z7E5C7LLKG"
     storage: cookies
