@@ -193,35 +193,42 @@
     "href": "index.html",
     "title": "Build with AI",
     "section": "",
-    "text": "Do lots of fun stuff with AI Learn how to use Antigravity to:"
+    "text": "Master your AI journey with this 4-part workshop series designed for researchers and academics wanting to Build with AI. Throughout the series, attendees will learn foundational Python and data analysis skills, build Retrieval-Augmented Generation (RAG) pipelines to query custom knowledge bases, develop intelligent AI agents equipped with custom tools, and explore how to accelerate computational research using Google’s Antigravity AI-assisted IDE."
   },
   {
-    "objectID": "index.html#watch-the-recording",
-    "href": "index.html#watch-the-recording",
+    "objectID": "index.html#register",
+    "href": "index.html#register",
     "title": "Build with AI",
-    "section": "Watch the recording!",
-    "text": "Watch the recording!\nWatch Rahul Sundar present the below content live: https://youtu.be/34dS94ONuDM\n\nThis workshop is part of the GDG AI for Science workshop series. Join the community (in Australia, Korea, Japan, or India) for talks, events, collaborations and more."
+    "section": "Register",
+    "text": "Register\nRegiteer for the series at the GDG AI for Science\n\nThis workshop is part of the GDG AI for Science workshop series. Join the community (in Australia, Korea, Japan, or India) for talks, events, collaborations and more."
+  },
+  {
+    "objectID": "index.html#when",
+    "href": "index.html#when",
+    "title": "Build with AI",
+    "section": "When",
+    "text": "When\nEvery Thursday in May:\n\nMay 7: Python and AI fundamentals\nMay 14: Tailoring LLMs: RAG and Fine-Tuning\nMay 21: AI Agents for Research\nMay 28: AI-Assisted Research with Antigravity"
   },
   {
     "objectID": "index.html#target-audience",
     "href": "index.html#target-audience",
     "title": "Build with AI",
     "section": "Target Audience",
-    "text": "Target Audience\nThis workshop is aimed at anyone that writes code for scientific research including:\n\nResearch students (undergrad, masters, PhD, etc)\nResearchers requiring computational tools\nData Scientists and professionals supporting scientific projects"
+    "text": "Target Audience\nThis workshop is aimed at anyone looking to accelerate their research with AI including:\n\nResearch students (undergrad, masters, PhD, etc)\nResearchers requiring AI tools\nData Scientists and professionals supporting scientific projects\n\nUse cases will be grounded in typical scientific workloads."
   },
   {
     "objectID": "index.html#requirements",
     "href": "index.html#requirements",
     "title": "Build with AI",
-    "section": "Requirements",
-    "text": "Requirements\nBefore the session please download and install Antigravity for your system by following the instructions here: https://antigravity.google/download\nPrerequisites:\n\nBasic coding knowledge will be helpful.\nA motivation to experiment\nFamiliarity with Visual Studio Code editor will be helpful otherwise this will be a crash-course"
+    "section": "Requirements:",
+    "text": "Requirements:\n\nA Google account to use Google Colab.\nBasic familiarlity with Python (or join us for session 1 to get everything you need).\nBonus - free cloud credits for every attendee!\n\nAs our speakers are donating their time, we want to ensure a full and engaged event. Please reserve your spot only if you are committed to joining us for this workshop."
   },
   {
-    "objectID": "index.html#example-1-first-prompt",
-    "href": "index.html#example-1-first-prompt",
+    "objectID": "index.html#recording",
+    "href": "index.html#recording",
     "title": "Build with AI",
-    "section": "Example 1: First prompt",
-    "text": "Example 1: First prompt\nYou can immediately get started with a prompt in the Agent Manager sidebar or window\nYour goal is to show if temperature has changed in Sydney, Australia.\nKeep the conversation going now it has developed more context:\nYour goal is to prove this using data and code\nMake sure you have tools (like Python) installed and the correct environments are being used. Put comments into the generated artefacts to give it helpful context hints:\nrun the tests in conda environment oztemp\nKeep the agent working with more complex tasks:\nPlease extend this to make an animated heatmap of Australia's Annual Mean Max Temperature"
+    "section": "Recording",
+    "text": "Recording\nWill be available after the event."
   },
   {
     "objectID": "session/02-a-finetune.html#learning-objectives",
