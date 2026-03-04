@@ -353,11 +353,12 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#build-with-ai---agents" id="toc-build-with-ai---agents" class="nav-link active" data-scroll-target="#build-with-ai---agents">**Build with AI - Agents</a>
+  <li><a href="#build-with-ai---ai-agents-for-research" id="toc-build-with-ai---ai-agents-for-research" class="nav-link active" data-scroll-target="#build-with-ai---ai-agents-for-research">**Build with AI - AI Agents for Research</a>
   <ul class="collapse">
-  <li><a href="#workshop-goals" id="toc-workshop-goals" class="nav-link" data-scroll-target="#workshop-goals">Workshop Goals</a></li>
+  <li><a href="#workshop-goals-learning-objectives" id="toc-workshop-goals-learning-objectives" class="nav-link" data-scroll-target="#workshop-goals-learning-objectives">Workshop Goals / Learning Objectives:</a></li>
   <li><a href="#what-is-an-ai-agent" id="toc-what-is-an-ai-agent" class="nav-link" data-scroll-target="#what-is-an-ai-agent">What is an AI Agent?</a></li>
-  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools">Tools</a></li>
+  <li><a href="#toolsskills" id="toc-toolsskills" class="nav-link" data-scroll-target="#toolsskills">Tools/Skills</a></li>
+  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get started</a></li>
   <li><a href="#part-1-our-first-agent" id="toc-part-1-our-first-agent" class="nav-link" data-scroll-target="#part-1-our-first-agent">PART 1: Our First AGENT</a></li>
   <li><a href="#part-2-agents-with-custom-tools" id="toc-part-2-agents-with-custom-tools" class="nav-link" data-scroll-target="#part-2-agents-with-custom-tools">PART 2: Agents with custom tools</a></li>
   <li><a href="#part-3-agents-for-unstructured-text" id="toc-part-3-agents-for-unstructured-text" class="nav-link" data-scroll-target="#part-3-agents-for-unstructured-text">PART 3: Agents for unstructured text</a></li>
@@ -376,16 +377,15 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 
 
 
-<section id="build-with-ai---agents" class="level1">
-<h1>**Build with AI - Agents</h1>
-<p>This is a session run by the <a href="https://gdg.community.dev/gdg-ai-for-science-australia/">Google Developer Group AI for Science</a> - join us for hands-on workshops, talks from Google Experts, and research and funding opportunities.</p>
+<section id="build-with-ai---ai-agents-for-research" class="level1">
+<h1>**Build with AI - AI Agents for Research</h1>
 <p><strong>Instructor:</strong></p>
 <ul>
 <li>Dr Nate Butterworth (Google XWF)</li>
 </ul>
 <p><strong>Date:</strong> * May 21, 2026</p>
-<section id="workshop-goals" class="level2">
-<h2 class="anchored" data-anchor-id="workshop-goals">Workshop Goals</h2>
+<section id="workshop-goals-learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-goals-learning-objectives">Workshop Goals / Learning Objectives:</h2>
 <p>This workflow is designed as a beginner-friendly introduction to building AI “agents” using the <a href="https://pypi.org/project/google-adk/">Google Agent Development Kit (ADK)</a> for applications to science and research.</p>
 <ol type="1">
 <li><strong>Build a team of Agents:</strong> Create a variety of Agents that work together to take on a variety of “Research Assistant” roles</li>
@@ -408,9 +408,13 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <p>Single agents can do a lot. But what happens when the task gets complex? A single “monolithic” agent that tries to do research, writing, editing, and fact-checking all at once becomes a problem. Its instruction prompt gets long and confusing. It’s hard to debug (which part failed?), difficult to maintain, and often produces unreliable results.</p>
 <p>Instead of one “do-it-all” agent, we can build a multi-agent system. This is a team of simple, specialised agents that collaborate, just like a real-world team. Each agent has one clear job (e.g., one agent only does research, another only writes). This makes them easier to build, easier to test, and much more powerful and reliable when working together.</p>
 </section>
-<section id="tools" class="level2">
-<h2 class="anchored" data-anchor-id="tools">Tools</h2>
-<p>In an agent’s repetoire is the concept of “tools”. These are essentially traditional (Python) functions that take specific input and return fixed output. There are many “pre-built” tools or you can roll your own. See: * https://docs.crewai.com/en/concepts/tools#available-crewai-tools * https://google.github.io/adk-docs/tools/</p>
+<section id="toolsskills" class="level2">
+<h2 class="anchored" data-anchor-id="toolsskills">Tools/Skills</h2>
+<p>In an agent’s repetoire is the concept of “tools” and “skills”. These are essentially traditional (Python) functions that take specific input and return fixed output. There are many “pre-built” tools or you can roll your own. See: * https://docs.crewai.com/en/concepts/tools#available-crewai-tools * https://google.github.io/adk-docs/tools/</p>
+</section>
+<section id="get-started" class="level2">
+<h2 class="anchored" data-anchor-id="get-started">Get started</h2>
+<p>Visit <a href="https://colab.research.google.com/">Google Colab</a> and start a “New notebook in Drive”.</p>
 <div id="cell-1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="800ab6e1-3a71-4fc6-bf2e-1225335cac9e">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 0. Setup and Installation ---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This field is advancing rapidly. These versions work for now, but may change in future.</span></span>

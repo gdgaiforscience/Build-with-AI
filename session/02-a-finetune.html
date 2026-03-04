@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>a-finetune – Build with AI</title>
+<title>Build with AI - Tailoring LLMs: RAG and Fine-Tuning – Build with AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -353,15 +353,14 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#build-with-ai---fine-tuning" id="toc-build-with-ai---fine-tuning" class="nav-link active" data-scroll-target="#build-with-ai---fine-tuning"><strong>Build with AI - Fine Tuning</strong></a></li>
-  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">Contents</a></li>
-  <li><a href="#session-2a-fine-tuning-a-large-language-model-on-your-own-data" id="toc-session-2a-fine-tuning-a-large-language-model-on-your-own-data" class="nav-link" data-scroll-target="#session-2a-fine-tuning-a-large-language-model-on-your-own-data"><strong>Session 2a: Fine-Tuning a Large Language Model on Your Own Data</strong></a>
+  <li><a href="#session-a-fine-tuning-a-large-language-model-on-your-own-data" id="toc-session-a-fine-tuning-a-large-language-model-on-your-own-data" class="nav-link active" data-scroll-target="#session-a-fine-tuning-a-large-language-model-on-your-own-data">Session A: Fine-Tuning a Large Language Model on Your Own Data</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#workshop-goals-learning-objectives" id="toc-workshop-goals-learning-objectives" class="nav-link" data-scroll-target="#workshop-goals-learning-objectives">Workshop Goals / Learning Objectives:</a></li>
   <li><a href="#what-is-a-large-language-model-llm" id="toc-what-is-a-large-language-model-llm" class="nav-link" data-scroll-target="#what-is-a-large-language-model-llm">What is a Large Language Model (LLM)? 🤖</a></li>
   <li><a href="#what-is-fine-tuning" id="toc-what-is-fine-tuning" class="nav-link" data-scroll-target="#what-is-fine-tuning">What is Fine-Tuning? 🎯</a></li>
   <li><a href="#hardware-requirements" id="toc-hardware-requirements" class="nav-link" data-scroll-target="#hardware-requirements">Hardware Requirements 🚀</a></li>
   <li><a href="#frameworks-and-architectures" id="toc-frameworks-and-architectures" class="nav-link" data-scroll-target="#frameworks-and-architectures">Frameworks and Architectures</a></li>
+  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get started</a></li>
   <li><a href="#example-1-fine-tuning-gemma-with-keras-on-a-tpu" id="toc-example-1-fine-tuning-gemma-with-keras-on-a-tpu" class="nav-link" data-scroll-target="#example-1-fine-tuning-gemma-with-keras-on-a-tpu">Example 1: Fine-Tuning Gemma with Keras on a TPU</a></li>
   <li><a href="#data-loading-and-preparation" id="toc-data-loading-and-preparation" class="nav-link" data-scroll-target="#data-loading-and-preparation">Data Loading and Preparation</a></li>
   <li><a href="#loading-the-pre-trained-model" id="toc-loading-the-pre-trained-model" class="nav-link" data-scroll-target="#loading-the-pre-trained-model">Loading the Pre-Trained Model</a></li>
@@ -378,31 +377,43 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.dev/gdgaiforscience/Build-with-AI/blob/main/session/02-a-finetune.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><strong>Build with AI - Tailoring LLMs: RAG and Fine-Tuning</strong></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="build-with-ai---fine-tuning" class="level1">
-<h1><strong>Build with AI - Fine Tuning</strong></h1>
-</section>
-<section id="contents" class="level1">
-<h1>Contents</h1>
-</section>
-<section id="session-2a-fine-tuning-a-large-language-model-on-your-own-data" class="level1">
-<h1><strong>Session 2a: Fine-Tuning a Large Language Model on Your Own Data</strong></h1>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+</header>
+
+
+<p><strong>Instructors:</strong> * Dr Nate Butterworth (Google XWF)</p>
+<p><strong>Date:</strong> May 14, 2026</p>
+<section id="session-a-fine-tuning-a-large-language-model-on-your-own-data" class="level1">
+<h1>Session A: Fine-Tuning a Large Language Model on Your Own Data</h1>
+<section id="workshop-goals-learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-goals-learning-objectives">Workshop Goals / Learning Objectives:</h2>
 <ul>
-<li><p>Understand the concepts of pre-training and fine-tuning for Large Language Models (LLMs).</p></li>
-<li><p>Recognize the hardware requirements and limitations (GPU/TPU/CPU) for training.</p></li>
-<li><p>Prepare a custom dataset for fine-tuning.</p></li>
-<li><p>Fine-tune an LLM using Keras with a TPU backend.</p></li>
-<li><p>Fine-tune an LLM using the transformers library with a GPU backend.</p></li>
-<li><p>Understand the difference between full fine-tuning and Parameter-Efficient Fine-Tuning (PEFT) with LoRA.</p></li>
-<li><p>Evaluate the model’s performance by comparing responses before and after fine-tuning.</p></li>
-<li><p>Compare a RAG workflow with Fine Tuning</p></li>
+<li>Understand the concepts of pre-training and fine-tuning for Large Language Models (LLMs).</li>
+<li>Recognize the hardware requirements and limitations (GPU/TPU/CPU) for training.</li>
+<li>Prepare a custom dataset for fine-tuning.</li>
+<li>Fine-tune an LLM using Keras with a TPU backend.</li>
+<li>Fine-tune an LLM using the transformers library with a GPU backend.</li>
+<li>Understand the difference between full fine-tuning and Parameter-Efficient Fine-Tuning (PEFT) with LoRA.</li>
+<li>Evaluate the model’s performance by comparing responses before and after fine-tuning.</li>
+<li>Compare a RAG workflow with Fine Tuning</li>
 </ul>
 </section>
 <section id="what-is-a-large-language-model-llm" class="level2">
@@ -435,6 +446,10 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <p>These are the software libraries that provide the tools to load, manipulate, and train the models. We will use <strong>Keras</strong> (a user-friendly, high-level API). Other popular frameworks include <strong>Hugging Face transformers</strong>, <strong>Tensorflow</strong>, <strong>PyTorch</strong>, and more.</p>
 <p><em>You must use a framework that supports the model architecture you want to work with or vice versa!</em></p>
 </section>
+</section>
+<section id="get-started" class="level2">
+<h2 class="anchored" data-anchor-id="get-started">Get started</h2>
+<p>Visit <a href="https://colab.research.google.com/">Google Colab</a> and start a “New notebook in Drive”.</p>
 </section>
 <section id="example-1-fine-tuning-gemma-with-keras-on-a-tpu" class="level2">
 <h2 class="anchored" data-anchor-id="example-1-fine-tuning-gemma-with-keras-on-a-tpu">Example 1: Fine-Tuning Gemma with Keras on a TPU</h2>

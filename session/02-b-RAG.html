@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>b-rag – Build with AI</title>
+<title>Build with AI - Tailoring LLMs: RAG and Fine-Tuning – Build with AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -353,14 +353,12 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#build-with-ai---retrieval-augmented-generation" id="toc-build-with-ai---retrieval-augmented-generation" class="nav-link active" data-scroll-target="#build-with-ai---retrieval-augmented-generation"><strong>Build with AI - Retrieval Augmented Generation</strong></a></li>
-  <li><a href="#retrieval-augmented-generation-rag-and-how-it-is-betterworsecomplimentary-different-to-fine-tuning" id="toc-retrieval-augmented-generation-rag-and-how-it-is-betterworsecomplimentary-different-to-fine-tuning" class="nav-link" data-scroll-target="#retrieval-augmented-generation-rag-and-how-it-is-betterworsecomplimentary-different-to-fine-tuning">Retrieval-Augmented Generation (RAG) and how it is <del>better/worse/complimentary</del> different to Fine Tuning</a>
+  <li><a href="#session-b-retrieval-augmented-generation-rag" id="toc-session-b-retrieval-augmented-generation-rag" class="nav-link active" data-scroll-target="#session-b-retrieval-augmented-generation-rag">Session B: Retrieval-Augmented Generation (RAG)</a>
   <ul class="collapse">
   <li><a href="#fine-tuning-vs.-rag-vs." id="toc-fine-tuning-vs.-rag-vs." class="nav-link" data-scroll-target="#fine-tuning-vs.-rag-vs.">Fine-Tuning vs.&nbsp;RAG 🧠 vs.&nbsp;📚</a></li>
-  </ul></li>
-  <li><a href="#the-rag-pipeline" id="toc-the-rag-pipeline" class="nav-link" data-scroll-target="#the-rag-pipeline">The RAG Pipeline</a>
-  <ul class="collapse">
-  <li><a href="#step-0-prepare-our-environment-and-get-download-our-modelsdata" id="toc-step-0-prepare-our-environment-and-get-download-our-modelsdata" class="nav-link" data-scroll-target="#step-0-prepare-our-environment-and-get-download-our-modelsdata">Step 0: Prepare our environment and get download our models/data</a></li>
+  <li><a href="#the-rag-pipeline" id="toc-the-rag-pipeline" class="nav-link" data-scroll-target="#the-rag-pipeline">The RAG Pipeline</a></li>
+  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get started</a></li>
+  <li><a href="#step-0-prepare-our-environment-and-download-our-modelsdata" id="toc-step-0-prepare-our-environment-and-download-our-modelsdata" class="nav-link" data-scroll-target="#step-0-prepare-our-environment-and-download-our-modelsdata">Step 0: Prepare our environment and download our models/data</a></li>
   <li><a href="#step-1-setup-and-prepare-the-knowledge-base" id="toc-step-1-setup-and-prepare-the-knowledge-base" class="nav-link" data-scroll-target="#step-1-setup-and-prepare-the-knowledge-base">Step 1: Setup and Prepare the Knowledge Base</a></li>
   <li><a href="#step-2-the-retrieval---finding-relevant-knowledge" id="toc-step-2-the-retrieval---finding-relevant-knowledge" class="nav-link" data-scroll-target="#step-2-the-retrieval---finding-relevant-knowledge">Step 2: The “Retrieval” - Finding Relevant Knowledge</a></li>
   <li><a href="#step-3-the-generation---answering-the-question" id="toc-step-3-the-generation---answering-the-question" class="nav-link" data-scroll-target="#step-3-the-generation---answering-the-question">Step 3: The “Generation” - Answering the Question</a></li>
@@ -369,17 +367,33 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.dev/gdgaiforscience/Build-with-AI/blob/main/session/02-b-RAG.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><strong>Build with AI - Tailoring LLMs: RAG and Fine-Tuning</strong></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="build-with-ai---retrieval-augmented-generation" class="level1">
-<h1><strong>Build with AI - Retrieval Augmented Generation</strong></h1>
-</section>
-<section id="retrieval-augmented-generation-rag-and-how-it-is-betterworsecomplimentary-different-to-fine-tuning" class="level1">
-<h1>Retrieval-Augmented Generation (RAG) and how it is <del>better/worse/complimentary</del> different to Fine Tuning</h1>
+</header>
+
+
+<p><strong>Instructors:</strong> * Dr Nate Butterworth (Google XWF)</p>
+<p><strong>Date:</strong> May 14, 2026</p>
+<section id="session-b-retrieval-augmented-generation-rag" class="level1">
+<h1>Session B: Retrieval-Augmented Generation (RAG)</h1>
+<p>…and how it is <del>better/worse/complimentary</del> different to Fine Tuning</p>
 <p>In fine-tuning we update a model’s internal weights to teach it new knowledge. But the process is time-consuming, (computationally) expensive, and the knowledge can become outdated.</p>
 <p>Now, we explore a powerful and complementary technique: Retrieval-Augmented Generation (RAG).</p>
 <section id="fine-tuning-vs.-rag-vs." class="level2">
@@ -403,12 +417,16 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <p>RAG is often cheaper, faster, and allows you to use real-time data. Let’s see how it works in practice.</p>
 </section>
 </section>
-</section>
-<section id="the-rag-pipeline" class="level1">
-<h1>The RAG Pipeline</h1>
+<section id="the-rag-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="the-rag-pipeline">The RAG Pipeline</h2>
 <p>Our goal is to build a system that can answer medical questions using a knowledge base of documents. The LLM itself knows nothing about these specific documents; it will only use the information we find for it.</p>
-<section id="step-0-prepare-our-environment-and-get-download-our-modelsdata" class="level2">
-<h2 class="anchored" data-anchor-id="step-0-prepare-our-environment-and-get-download-our-modelsdata">Step 0: Prepare our environment and get download our models/data</h2>
+</section>
+<section id="get-started" class="level2">
+<h2 class="anchored" data-anchor-id="get-started">Get started</h2>
+<p>Visit <a href="https://colab.research.google.com/">Google Colab</a> and start a “New notebook in Drive”.</p>
+</section>
+<section id="step-0-prepare-our-environment-and-download-our-modelsdata" class="level2">
+<h2 class="anchored" data-anchor-id="step-0-prepare-our-environment-and-download-our-modelsdata">Step 0: Prepare our environment and download our models/data</h2>
 <p>First let’s get the libraries we need: an LLM model to use for asking questions and generating responses, an “embedding model” that builds a hyper-dimensional network of similarities between “words” and “tokens”, and some data to use as an example.</p>
 <div id="cell-2" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>U pip <span class="op">-</span>q</span>
