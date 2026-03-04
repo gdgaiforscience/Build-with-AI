@@ -3,7 +3,7 @@ execute:
   output: false
 ---
 
-# **Build with AI - AI-Assisted Research with Antigravity
+# **Build with AI - AI-Assisted Research with Antigravity**
 
 Google’s new code editor, [**Antigravity**](https://antigravity.google/), is an AI-assisted IDE (Integrated Development Environment) with native agentic and generative AI capabilities built into the platform to rapidly accelerate computational and data driven development and scientific research. Antigravity is built on top of the Visual Studio Code editor for a familiar but accelerated user experience. The embedded agentic assistance allows users to spend more time solving research problems and less time debugging problematic code. This workshop is designed for researchers of all coding skill levels. We will walk through simple, research-grounded examples to help you fit the Antigravity framework immediately to your own projects. 
 
@@ -32,7 +32,7 @@ Before the session please download and install Antigravity for your system by fo
 - Familiarity with Visual Studio Code editor will be helpful otherwise this will be a crash-course
 
 
-## Get Started
+## Get started
 
 After installation, the first time you launch Antigravity you will answer a few basic configuration steps (all options can be be left as default and changed later) then you will have to login with your Google credentials. You can also change user-accounts later if needed.
 From there you will land in the VSCode IDE, and can open a Folder/Project immediately starting hacking!
@@ -124,7 +124,7 @@ Write the conclusion based on the data and review about the link between Earthqu
 Perform a systematic search across ArXiv, PubMed, and Semantic Scholar for 'Non-pharmacological interventions for Neuroplasticity (2023-2026)'. Extract the N-values, p-values, and effect sizes from the top 40 relevant papers. Use Python to aggregate this data into a structured CSV. Identify and highlight 'Evidence Contradictions' where two or more papers report conflicting results for the same intervention. Generate a summary identifying the 'consensus gap' and suggest three specific hypotheses for future experimental validation.
 ```
 
-## Example 7: Grant writing assitance
+## Example 7: Grant writing assistance
 
 ```bash
 Read the draft grant proposal in grant_v1.docx. Cross-reference all technical claims in the 'Methodology' section with existing literature using search. Identify any 'Innovation Claims' that are actually already solved in recent 2025 publications. Check the budget section against the proposed computational requirements (e.g., GPU hours for training the specified model) and flag if the requested funds are insufficient. Suggest three peer-reviewed citations that would strengthen the 'Prior Art' section.
@@ -178,7 +178,7 @@ Build a Streamlit dashboard that lets me launch 'train_burgers.py' in the backgr
 - **Environment Management**: Use Antigravity to set up dedicated Conda environments (`conda create -n pinn ...`) to avoid dependency conflicts.
 - **Verification**: Always ask Antigravity to create a `test_pinn.py` to ensure the mathematical logic (derivatives) is correct early on.
 
-# Final thoughts
+## Final thoughts
 
 * To get the best results from an agentic IDE, it can be helpful to move from instructional prompting ("do this") to architectural prompting ("build a system that functions like this"). You don't have to be the developer or the project manager, rather think of yourself as the agent orchestration engineer!
 

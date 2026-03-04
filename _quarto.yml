@@ -20,7 +20,7 @@ website:
       - href: session/04-antigravity.qmd
         text: Antigravity
   google-analytics:
-    tracking-id: "G-Z7E5C7LLKG"
+    tracking-id: "G-344M4P3CHH"
     storage: cookies
     anonymize-ip: true
   repo-url: https://github.com/gdgaiforscience/Build-with-AI
