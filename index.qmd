@@ -8,7 +8,7 @@ Master your AI journey with this 4-part workshop series designed for researchers
 
 ## Register
 
-Regiteer for the series at the [GDG AI for Science](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-python-and-ai-fundamentals/)
+Register for the series at the [GDG AI for Science](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-python-and-ai-fundamentals/)
 
 ![ ](./aiforsci.png)
 
@@ -19,14 +19,14 @@ This workshop is part of the [GDG AI for Science](https://gdg.community.dev/even
 ## When 
 Every Thursday in May:
 
-* May 7: Python and AI fundamentals
-* May 14: Tailoring LLMs: RAG and Fine-Tuning
-* May 21: AI Agents for Research
-* May 28: AI-Assisted Research with Antigravity 
+* May 7: [Python and AI fundamentals](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-python-and-ai-fundamentals/)
+* May 14: [Tailoring LLMs: RAG and Fine-Tuning](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-tailoring-llms-rag-and-fine-tuning/)
+* May 21: [AI Agents for Research](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-ai-agents-for-research/)
+* May 28: [AI-Assisted Research with Antigravity](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-ai-assisted-research-with-antigravity/)
 
 ## Target Audience
 
-This workshop is aimed at anyone looking to accelerate their research with AI including:
+This workshop sereis is aimed at anyone looking to accelerate their research with AI including:
 
 * Research students (undergrad, masters, PhD, etc)
 * Researchers requiring AI tools
@@ -38,7 +38,7 @@ Use cases will be grounded in typical scientific workloads.
 ## Requirements:
 
 * A Google account to use Google Colab.
-* Basic familiarlity with Python (or join us for session 1 to get everything you need). 
+* Basic familiarlity with Python (or join us for session on May 7 to get everything you need). 
 * **Bonus** - free cloud credits for every attendee!
 
 
