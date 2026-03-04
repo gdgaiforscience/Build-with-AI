@@ -1,8 +1,10 @@
 ---
-title: '**Build with AI**'
+# title: '**Build with AI**'
 execute: 
   output: false
 ---
+
+![ ](./BwAI-logo.png)
 
 Master your AI journey with this 4-part workshop series designed for researchers and academics wanting to Build with AI. Throughout the series, attendees will learn foundational Python and data analysis skills, build Retrieval-Augmented Generation (RAG) pipelines to query custom knowledge bases, develop intelligent AI agents equipped with custom tools, and explore how to accelerate computational research using Google's Antigravity AI-assisted IDE.
 
@@ -12,7 +14,7 @@ Register for the series at the [GDG AI for Science](https://gdg.community.dev/ev
 
 ![ ](./aiforsci.png)
 
-This workshop is part of the [GDG AI for Science](https://gdg.community.dev/events/details/google-gdg-ai-for-science-india-presents-googles-antigravity-accelerating-research-and-scientific-pipelines) workshop series. Join the community (in [Australia](https://gdg.community.dev/gdg-ai-for-science-australia/), [Korea](https://gdg.community.dev/gdg-ai-for-science-korea/), [Japan](https://gdg.community.dev/gdg-ai-for-science-japan), or [India](https://gdg.community.dev/gdg-ai-for-science-india/)) for talks, events, collaborations and more.
+Join the community (in [Australia](https://gdg.community.dev/gdg-ai-for-science-australia/), [Korea](https://gdg.community.dev/gdg-ai-for-science-korea/), [Japan](https://gdg.community.dev/gdg-ai-for-science-japan), or [India](https://gdg.community.dev/gdg-ai-for-science-india/)) for talks, events, collaborations and more.
 
 
 
@@ -35,7 +37,7 @@ This workshop sereis is aimed at anyone looking to accelerate their research wit
 Use cases will be grounded in typical scientific workloads. 
 
 
-## Requirements:
+## Requirements
 
 * A Google account to use Google Colab.
 * Basic familiarlity with Python (or join us for session on May 7 to get everything you need). 
