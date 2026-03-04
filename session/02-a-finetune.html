@@ -107,14 +107,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z7E5C7LLKG"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-344M4P3CHH"></script>
 
 <script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
+gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
 </script>
 
 
@@ -353,8 +353,7 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#session-a-fine-tuning-a-large-language-model-on-your-own-data" id="toc-session-a-fine-tuning-a-large-language-model-on-your-own-data" class="nav-link active" data-scroll-target="#session-a-fine-tuning-a-large-language-model-on-your-own-data">Session A: Fine-Tuning a Large Language Model on Your Own Data</a>
-  <ul class="collapse">
+  <li><a href="#session-a-fine-tuning-a-large-language-model-on-your-own-data" id="toc-session-a-fine-tuning-a-large-language-model-on-your-own-data" class="nav-link active" data-scroll-target="#session-a-fine-tuning-a-large-language-model-on-your-own-data">Session A: Fine-Tuning a Large Language Model on Your Own Data</a></li>
   <li><a href="#workshop-goals-learning-objectives" id="toc-workshop-goals-learning-objectives" class="nav-link" data-scroll-target="#workshop-goals-learning-objectives">Workshop Goals / Learning Objectives:</a></li>
   <li><a href="#what-is-a-large-language-model-llm" id="toc-what-is-a-large-language-model-llm" class="nav-link" data-scroll-target="#what-is-a-large-language-model-llm">What is a Large Language Model (LLM)? 🤖</a></li>
   <li><a href="#what-is-fine-tuning" id="toc-what-is-fine-tuning" class="nav-link" data-scroll-target="#what-is-fine-tuning">What is Fine-Tuning? 🎯</a></li>
@@ -367,12 +366,9 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
   <li><a href="#test-before-fine-tuning-establish-a-baseline" id="toc-test-before-fine-tuning-establish-a-baseline" class="nav-link" data-scroll-target="#test-before-fine-tuning-establish-a-baseline">Test Before Fine-Tuning (Establish a Baseline)</a></li>
   <li><a href="#compile-and-fine-tune-the-model" id="toc-compile-and-fine-tune-the-model" class="nav-link" data-scroll-target="#compile-and-fine-tune-the-model">Compile and Fine-Tune the Model</a></li>
   <li><a href="#test-after-fine-tuning" id="toc-test-after-fine-tuning" class="nav-link" data-scroll-target="#test-after-fine-tuning">Test After Fine-Tuning</a></li>
-  </ul></li>
   <li><a href="#example-2-a-quick-look-at-gpt-2" id="toc-example-2-a-quick-look-at-gpt-2" class="nav-link" data-scroll-target="#example-2-a-quick-look-at-gpt-2">Example 2: A Quick Look at GPT-2</a></li>
-  <li><a href="#how-you-can-adapt-this-for-your-research" id="toc-how-you-can-adapt-this-for-your-research" class="nav-link" data-scroll-target="#how-you-can-adapt-this-for-your-research">How You Can Adapt This For Your Research</a>
-  <ul class="collapse">
+  <li><a href="#how-you-can-adapt-this-for-your-research" id="toc-how-you-can-adapt-this-for-your-research" class="nav-link" data-scroll-target="#how-you-can-adapt-this-for-your-research">How You Can Adapt This For Your Research</a></li>
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links:</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.dev/gdgaiforscience/Build-with-AI/blob/main/session/02-a-finetune.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -401,8 +397,9 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 
 <p><strong>Instructors:</strong> * Dr Nate Butterworth (Google XWF)</p>
 <p><strong>Date:</strong> May 14, 2026</p>
-<section id="session-a-fine-tuning-a-large-language-model-on-your-own-data" class="level1">
-<h1>Session A: Fine-Tuning a Large Language Model on Your Own Data</h1>
+<section id="session-a-fine-tuning-a-large-language-model-on-your-own-data" class="level2">
+<h2 class="anchored" data-anchor-id="session-a-fine-tuning-a-large-language-model-on-your-own-data">Session A: Fine-Tuning a Large Language Model on Your Own Data</h2>
+</section>
 <section id="workshop-goals-learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-goals-learning-objectives">Workshop Goals / Learning Objectives:</h2>
 <ul>
@@ -637,9 +634,8 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>causal_lm.save_to_preset(<span class="st">"./my-model-ft"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-</section>
-<section id="example-2-a-quick-look-at-gpt-2" class="level1">
-<h1>Example 2: A Quick Look at GPT-2</h1>
+<section id="example-2-a-quick-look-at-gpt-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-a-quick-look-at-gpt-2">Example 2: A Quick Look at GPT-2</h2>
 <p>Here we want to highlight how the choice of a different model means we have to make different choices in our data and framework. And the absoulte bare minimum amount of code for model tuning.</p>
 <div id="cell-25" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a GPT2 backbone with pre-trained weights. </span><span class="al">NOTE</span><span class="co"> the differnet keras_hub.models method!</span></span>
@@ -675,12 +671,13 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>causal_lm.generate(prompt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="how-you-can-adapt-this-for-your-research" class="level1">
-<h1>How You Can Adapt This For Your Research</h1>
+<section id="how-you-can-adapt-this-for-your-research" class="level2">
+<h2 class="anchored" data-anchor-id="how-you-can-adapt-this-for-your-research">How You Can Adapt This For Your Research</h2>
 <p>The examples above use a medical question-answering dataset, but the workflow is highly adaptable.</p>
 <p>Understand your task. Pick a model. Pick a framework. Build your pipeline!</p>
 <p>The key is to structure your data into what your framework/model requires, that also teaches the model how to perform the task you want.</p>
 <p>To see an approach using the Transformers framework (instead of Keras) try *Fine Tune with Transformers (GPU accelerator required)** <a href="https://colab.research.google.com/drive/1sJviybARN36t3d_i-gfmc0zDs51WDgzz?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Colab"></a> or <a href="https://www.kaggle.com/code/astrobutter/gdg-ai-for-science-finetuning-transformers"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" class="img-fluid" alt="Kaggle"></a></p>
+</section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links:</h2>
 <p>KerasHub Documentation: https://keras.io/keras_hub/api/models/gemma3/</p>
@@ -693,7 +690,6 @@ gtag('config', 'G-Z7E5C7LLKG', { 'anonymize_ip': true});
 <p>Huggingface Sentence-Transformers documentation: https://huggingface.co/sentence-transformers</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
