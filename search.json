@@ -200,7 +200,7 @@
     "href": "index.html#register",
     "title": "Build with AI",
     "section": "Register",
-    "text": "Register\nRegister for the series at the GDG AI for Science\n\nThis workshop is part of the GDG AI for Science workshop series. Join the community (in Australia, Korea, Japan, or India) for talks, events, collaborations and more."
+    "text": "Register\nRegister for the series at the GDG AI for Science\n\nJoin the community (in Australia, Korea, Japan, or India) for talks, events, collaborations and more."
   },
   {
     "objectID": "index.html#when",
@@ -220,8 +220,8 @@
     "objectID": "index.html#requirements",
     "href": "index.html#requirements",
     "title": "Build with AI",
-    "section": "Requirements:",
-    "text": "Requirements:\n\nA Google account to use Google Colab.\nBasic familiarlity with Python (or join us for session on May 7 to get everything you need).\nBonus - free cloud credits for every attendee!\n\nAs our speakers are donating their time, we want to ensure a full and engaged event. Please reserve your spot only if you are committed to joining us for this workshop."
+    "section": "Requirements",
+    "text": "Requirements\n\nA Google account to use Google Colab.\nBasic familiarlity with Python (or join us for session on May 7 to get everything you need).\nBonus - free cloud credits for every attendee!\n\nAs our speakers are donating their time, we want to ensure a full and engaged event. Please reserve your spot only if you are committed to joining us for this workshop."
   },
   {
     "objectID": "index.html#recording",
