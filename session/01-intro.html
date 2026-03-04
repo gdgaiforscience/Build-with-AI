@@ -1057,7 +1057,7 @@ Samples treated with DrugA:
 <section id="setting-up-for-gemma-via-keras-and-kaggle" class="level3">
 <h3 class="anchored" data-anchor-id="setting-up-for-gemma-via-keras-and-kaggle">Setting up for Gemma (via Keras and Kaggle)</h3>
 <p><strong>1. Install Necessary Libraries:</strong> We need <code>kaggle</code> (to download the model from Kaggle), <code>keras-hub==0.23</code> (to work with Gemma easily), <code>keras</code> (the core library), and a backend like <code>tensorflow</code>. The <code>--quiet</code> flag reduces the amount of installation output.</p>
-<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="1f79475d-5fba-4641-a93c-1a6ad31a1159">
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="1f79475d-5fba-4641-a93c-1a6ad31a1159">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install libraries (if not already installed or if a specific version is needed)</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The -q flag is for "quiet" output</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The -U flag is for "upgrade" if already installed</span></span>
@@ -1087,7 +1087,7 @@ Wall time: 27.1 s</code></pre>
 <p><strong>Model choice:</strong> We’ll use <code>"gemma3_270m"</code>, which is the 270 million parameter version of Gemma3. It offers a lightweight model with entry-level performance and resource requirements for a workshop setting.</p>
 <p><strong>Note:</strong> The first time you run <code>from_preset</code>, it will download the model weights from Kaggle. This can take a few minutes. Subsequent runs will use the cached version if available. You might also need to accept model terms on Kaggle if you haven’t used this specific model via API before.</p>
 <p><strong>Now, you must authenticate with your credentials in your <code>kaggle.json</code> file.</strong> This can be codified in <a href="https://github.com/Kaggle/kagglehub?tab=readme-ov-file#authenticate">several secure and automated</a> ways or you can just copy and pasted using <code>kagglehub.login()</code></p>
-<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:86,&quot;referenced_widgets&quot;:[&quot;bbac88b254ae4f8aba8be3311989d0e8&quot;,&quot;181f96ba139c4831a3c7738b4e07b14b&quot;,&quot;a775478a4c084f4b8e50cfdc41c81975&quot;,&quot;2921414cfbff4fb59aec27b67bba84ae&quot;,&quot;930abd3641d34b51ad024f9615c51bad&quot;,&quot;0c5367e4108641a096b35c2177791d94&quot;,&quot;d13207b2778a4b4380cead2a790060f8&quot;,&quot;6a7ba9a404804ddea5994ce5613b032e&quot;,&quot;e2afeeff7b37452f97afbef8f4ed33ff&quot;,&quot;7c54e92813df4e55bc3faad7d4ae1214&quot;,&quot;92d00d715ee84cdda447baf36d50e769&quot;,&quot;6a06d1eaa5a4417187e7e69400579d6e&quot;,&quot;bafbbe0a091a43c6908ffbe7962035a1&quot;,&quot;f423fc9132d244a2b24da370d139f454&quot;,&quot;f3160a8b838c4664819ce1b52fde5eca&quot;,&quot;924ddb02d91449668fcd49f7c8273743&quot;,&quot;3d99a657576e4ee0833f3317a269cfda&quot;,&quot;a48817ae0dfb47dfac5455f280c54335&quot;,&quot;c75f53adfa70462c9df0fae3b78a25bc&quot;,&quot;13a8821b977649ad9104cc11aa410aef&quot;,&quot;17abc32e02474d7bb19e1aca7fedf848&quot;,&quot;d7b02888e45a4dc0b07a995c0b85dd49&quot;,&quot;5891c68da08f4b45ba84ec6beb50b572&quot;]}}" data-outputid="70050297-01d1-45f9-877a-4156877ddcf4">
+<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:86,&quot;referenced_widgets&quot;:[&quot;bbac88b254ae4f8aba8be3311989d0e8&quot;,&quot;181f96ba139c4831a3c7738b4e07b14b&quot;,&quot;a775478a4c084f4b8e50cfdc41c81975&quot;,&quot;2921414cfbff4fb59aec27b67bba84ae&quot;,&quot;930abd3641d34b51ad024f9615c51bad&quot;,&quot;0c5367e4108641a096b35c2177791d94&quot;,&quot;d13207b2778a4b4380cead2a790060f8&quot;,&quot;6a7ba9a404804ddea5994ce5613b032e&quot;,&quot;e2afeeff7b37452f97afbef8f4ed33ff&quot;,&quot;7c54e92813df4e55bc3faad7d4ae1214&quot;,&quot;92d00d715ee84cdda447baf36d50e769&quot;,&quot;6a06d1eaa5a4417187e7e69400579d6e&quot;,&quot;bafbbe0a091a43c6908ffbe7962035a1&quot;,&quot;f423fc9132d244a2b24da370d139f454&quot;,&quot;f3160a8b838c4664819ce1b52fde5eca&quot;,&quot;924ddb02d91449668fcd49f7c8273743&quot;,&quot;3d99a657576e4ee0833f3317a269cfda&quot;,&quot;a48817ae0dfb47dfac5455f280c54335&quot;,&quot;c75f53adfa70462c9df0fae3b78a25bc&quot;,&quot;13a8821b977649ad9104cc11aa410aef&quot;,&quot;17abc32e02474d7bb19e1aca7fedf848&quot;,&quot;d7b02888e45a4dc0b07a995c0b85dd49&quot;,&quot;5891c68da08f4b45ba84ec6beb50b572&quot;]}}" data-outputid="70050297-01d1-45f9-877a-4156877ddcf4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> kagglehub</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>kagglehub.login()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1100,7 +1100,7 @@ Wall time: 27.1 s</code></pre>
 Kaggle credentials successfully validated.</code></pre>
 </div>
 </div>
-<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ac0c2475-bd68-4b28-8b6d-8f563edf06f4">
+<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ac0c2475-bd68-4b28-8b6d-8f563edf06f4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># downloaded by default to /root/.cache/kagglehub/models/keras/gemma3/keras/gemma3_1b/3/config.json</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>gemma <span class="op">=</span> keras_hub.models.Gemma3CausalLM.from_preset(<span class="st">"kaggle://keras/gemma3/keras/gemma3_270m"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1113,7 +1113,7 @@ Wall time: 23 s</code></pre>
 <section id="core-concept" class="level3">
 <h3 class="anchored" data-anchor-id="core-concept">Core concept:</h3>
 <p>Download a local model - then send it prompts with the Keras <code>.generate("My prompt")</code> method</p>
-<div id="cell-28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:93}}" data-outputid="49b3dd81-a02f-4545-cde3-4745b774dcf9">
+<div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:93}}" data-outputid="49b3dd81-a02f-4545-cde3-4745b774dcf9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>gemma.generate(<span class="st">"A p-value is a"</span>, max_length<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1125,7 +1125,7 @@ Wall time: 23.7 s</code></pre>
 </div>
 </div>
 <p>Model choice is important for how we expect it to behave. Check the variations of some popluar models: https://www.kaggle.com/models/google/gemma-3</p>
-<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:74}}" data-outputid="2e634646-bee0-46a1-e44a-9daa18e074be">
+<div id="cell-29" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:74}}" data-outputid="2e634646-bee0-46a1-e44a-9daa18e074be">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>gemma.generate(<span class="st">"What is a p-value?"</span>, max_length<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1136,7 +1136,7 @@ Wall time: 6.04 s</code></pre>
 <pre><code>'What is a p-value?\n\nWhat is a p-value?\n\nWhat is a p-value?\n\nWhat is a p-value?\n\nWhat is a p-value?\n\nWhat is a p-value?\n\nWhat'</code></pre>
 </div>
 </div>
-<div id="cell-31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fb7b9448-99e7-4bfd-9b3e-873d60563521">
+<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fb7b9448-99e7-4bfd-9b3e-873d60563521">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's try a an "instruction-tuned" model.</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># You could try a "bigger" model if resources permit e.g. gemma3_instruct_7b</span></span>
@@ -1146,7 +1146,7 @@ Wall time: 6.04 s</code></pre>
 Wall time: 24.1 s</code></pre>
 </div>
 </div>
-<div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:74}}" data-outputid="be806b91-c5d8-49ef-b3a0-6f4bfbd2efbc">
+<div id="cell-31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:74}}" data-outputid="be806b91-c5d8-49ef-b3a0-6f4bfbd2efbc">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>gemma.generate(<span class="st">"What is a p-value?"</span>, max_length<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1157,14 +1157,14 @@ Wall time: 27.5 s</code></pre>
 <pre><code>'What is a p-value?\n\nA.  A value that is less than the significance of the test.\nB.  A value that is greater than the significance of the test.\nC.  A value that is less than'</code></pre>
 </div>
 </div>
-<div id="cell-33" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:38}}" data-outputid="88b59e55-90b8-49a4-8059-1c33fca53908">
+<div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:38}}" data-outputid="88b59e55-90b8-49a4-8059-1c33fca53908">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>gemma.generate(<span class="st">"What does the p stand for?"</span>, max_length<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>'What does the p stand for?\n\n**Please provide the word or phrase that you want me to use to spell it.**\n&lt;end_of_turn&gt;'</code></pre>
 </div>
 </div>
 <p>Chat, with conversation history!</p>
-<div id="cell-35" class="cell">
+<div id="cell-34" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to manually format the conversation history for Gemma</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># based on its expected chat template format.</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_gemma_prompt_manual(history):</span>
@@ -1195,7 +1195,7 @@ Wall time: 27.5 s</code></pre>
 <span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>    prompt <span class="op">+=</span> <span class="st">"&lt;start_of_turn&gt;model</span><span class="ch">\n</span><span class="st">"</span></span>
 <span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> prompt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f3dd4576-a2c8-4e7c-d830-8b7b3f3f4001">
+<div id="cell-35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f3dd4576-a2c8-4e7c-d830-8b7b3f3f4001">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maintain conversation history as a list of dictionaries</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Each dictionary has 'role' ('user' or 'model') and 'content' (the message)</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>conversation_history <span class="op">=</span> []</span>
@@ -1283,7 +1283,7 @@ The word "p" stands for **probability**.
 <figcaption>pyai4sci-aistudio1.png</figcaption>
 </figure>
 </div>
-<div id="cell-39" class="cell">
+<div id="cell-38" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import libraries</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google <span class="im">import</span> genai</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1292,7 +1292,7 @@ The word "p" stands for **probability**.
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up our LLM model (and API key)</span></span>
 <span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> genai.Client(api_key<span class="op">=</span>userdata.get(<span class="st">'GEMINI_API_KEY'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-40" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:143}}" data-outputid="6c227dd7-c2c5-4c79-d7fe-53fcc319f3b1">
+<div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:143}}" data-outputid="6c227dd7-c2c5-4c79-d7fe-53fcc319f3b1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a CSV file (that comes with Colab) into a DataFrame for us to ask questions with the LLM</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'sample_data/california_housing_train.csv'</span>)</span>
@@ -1598,7 +1598,7 @@ The word "p" stands for **probability**.
   </div>
 </div>
 </div>
-<div id="cell-41" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:898}}" data-outputid="05e94222-e0ce-4864-e4db-64c475e89e0e">
+<div id="cell-40" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:898}}" data-outputid="05e94222-e0ce-4864-e4db-64c475e89e0e">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A quick look at the data</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>display(df.info())</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1631,17 +1631,17 @@ memory usage: 1.2 MB</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="01-intro_files/figure-html/cell-25-output-3.png" class="img-fluid figure-img"></p>
+<p><img src="01-intro_files/figure-html/cell-24-output-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="cell-42" class="cell">
+<div id="cell-41" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the DataFrame to a string representation for the LLM to understand</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># All text-based llms fundamentally need their data as some representation they understand through "tokenised" textual representation.</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>df_string <span class="op">=</span> dfshort.to_string()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-43" class="cell">
+<div id="cell-42" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>prompt <span class="op">=</span> <span class="ss">f"""</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="ss">I have the following experimental data:</span></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1650,14 +1650,14 @@ memory usage: 1.2 MB</code></pre>
 <span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="ss">Please answer the following question about the data:</span></span>
 <span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-44" class="cell">
+<div id="cell-43" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>question_1 <span class="op">=</span> <span class="st">"Where are these data located?"</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>full_prompt <span class="op">=</span> prompt <span class="op">+</span> question_1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="core-concept-1" class="level3">
 <h3 class="anchored" data-anchor-id="core-concept-1">Core concept!</h3>
 <p>Once you have setup your connection to the API endpoint, you can send your queries with: <code>client.models.generate_content(model='gemini-2.0-flash',contents="My prompt")</code></p>
-<div id="cell-46" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="eab2fbea-f40e-4341-b9eb-81701b7fd625">
+<div id="cell-45" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="eab2fbea-f40e-4341-b9eb-81701b7fd625">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">'gemini-2.0-flash'</span>,</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span>full_prompt</span>
@@ -1676,7 +1676,7 @@ Therefore, the data represents geographic locations in Southern California.
 </code></pre>
 </div>
 </div>
-<div id="cell-47" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="21ccd5c8-25b9-492c-ae66-95c0076f2b6c">
+<div id="cell-46" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="21ccd5c8-25b9-492c-ae66-95c0076f2b6c">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>question_housing_2 <span class="op">=</span> <span class="st">"What do 'median_income' and 'median_house_value' represent in this dataset, and what insights can you draw from their relationship based on these sample rows?"</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>full_prompt_housing_2 <span class="op">=</span> prompt <span class="op">+</span> question_housing_2</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
