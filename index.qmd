@@ -26,6 +26,8 @@ Every Thursday in May:
 * May 21: [AI Agents for Research](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-ai-agents-for-research/)
 * May 28: [AI-Assisted Research with Antigravity](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-ai-assisted-research-with-antigravity/)
 
+All sessions are independent and can be run in isolation.
+
 ## Target Audience
 
 This workshop sereis is aimed at anyone looking to accelerate their research with AI including:
@@ -39,7 +41,7 @@ Use cases will be grounded in typical scientific workloads.
 
 ## Requirements
 
-* A Google account to use Google Colab.
+* A Google account to use Google Colab, Kaggle, AI Studio, and Antigravity.
 * Basic familiarlity with Python (or join us for session on May 7 to get everything you need). 
 * **Bonus** - free cloud credits for every attendee!
 

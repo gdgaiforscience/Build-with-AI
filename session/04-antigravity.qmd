@@ -1,33 +1,26 @@
 ---
-title: '**Antigravity for Science**'
 execute: 
   output: false
 ---
 
+# **Build with AI - AI-Assisted Research with Antigravity
+
 Google’s new code editor, [**Antigravity**](https://antigravity.google/), is an AI-assisted IDE (Integrated Development Environment) with native agentic and generative AI capabilities built into the platform to rapidly accelerate computational and data driven development and scientific research. Antigravity is built on top of the Visual Studio Code editor for a familiar but accelerated user experience. The embedded agentic assistance allows users to spend more time solving research problems and less time debugging problematic code. This workshop is designed for researchers of all coding skill levels. We will walk through simple, research-grounded examples to help you fit the Antigravity framework immediately to your own projects. 
 
-Learn how to use Antigravity to:
+**Instructor:**
+
+* Dr Nate Butterworth (Google XWF)
+
+**Date:**
+* May 28, 2026
+
+## Workshop Goals / Learning Objectives:
 
 * Automatically visualise and explore your datasets.
 * Wrangle and clean your data “instantly”.
 * Refactor code to execute efficiently on HPC environments or similar.
 * Produce machine learning pipelines that immediately fit your research problems.
 
-## Watch the recording!
-
-Watch Rahul Sundar present the below content live: [https://youtu.be/34dS94ONuDM](https://youtu.be/34dS94ONuDM)
-
-![ ](./aiforsci.png)
-
-This workshop is part of the [GDG AI for Science](https://gdg.community.dev/events/details/google-gdg-ai-for-science-india-presents-googles-antigravity-accelerating-research-and-scientific-pipelines) workshop series. Join the community (in [Australia](https://gdg.community.dev/gdg-ai-for-science-australia/), [Korea](https://gdg.community.dev/gdg-ai-for-science-korea/), [Japan](https://gdg.community.dev/gdg-ai-for-science-japan), or [India](https://gdg.community.dev/gdg-ai-for-science-india/)) for talks, events, collaborations and more.
-
-
-## Target Audience
-This workshop is aimed at anyone that writes code for scientific research including:
-
-* Research students (undergrad, masters, PhD, etc)
-* Researchers requiring computational tools
-* Data Scientists and professionals supporting scientific projects
 
 ## Requirements
 Before the session please download and install Antigravity for your system by following the instructions here: [https://antigravity.google/download](https://antigravity.google/download)
@@ -39,8 +32,7 @@ Before the session please download and install Antigravity for your system by fo
 - Familiarity with Visual Studio Code editor will be helpful otherwise this will be a crash-course
 
 
-
-# Welcome to Antigravity
+## Get Started
 
 After installation, the first time you launch Antigravity you will answer a few basic configuration steps (all options can be be left as default and changed later) then you will have to login with your Google credentials. You can also change user-accounts later if needed.
 From there you will land in the VSCode IDE, and can open a Folder/Project immediately starting hacking!
