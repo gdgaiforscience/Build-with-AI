@@ -208,3 +208,6 @@ __marimo__/
 
 /.quarto/
 **/*.quarto_ipynb
+
+.agents
+_site
