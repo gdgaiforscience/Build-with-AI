@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gdgaiforscience.github.io/Build-with-AI/session/04-antigravity.html</loc>
-    <lastmod>2026-03-04T03:00:31.663Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gdgaiforscience.github.io/Build-with-AI/session/03-agents.html</loc>
-    <lastmod>2026-03-04T03:00:31.663Z</lastmod>
+    <loc>https://gdgaiforscience.github.io/Build-with-AI/index.html</loc>
+    <lastmod>2026-05-04T10:19:46.303Z</lastmod>
   </url>
   <url>
     <loc>https://gdgaiforscience.github.io/Build-with-AI/session/02-b-RAG.html</loc>
-    <lastmod>2026-03-04T03:00:31.661Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gdgaiforscience.github.io/Build-with-AI/index.html</loc>
-    <lastmod>2026-03-04T03:00:31.654Z</lastmod>
+    <lastmod>2026-05-04T10:19:46.309Z</lastmod>
   </url>
   <url>
     <loc>https://gdgaiforscience.github.io/Build-with-AI/session/02-a-finetune.html</loc>
-    <lastmod>2026-03-04T03:00:31.661Z</lastmod>
+    <lastmod>2026-05-04T10:19:46.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gdgaiforscience.github.io/Build-with-AI/session/04-antigravity.html</loc>
+    <lastmod>2026-05-04T10:19:46.311Z</lastmod>
   </url>
   <url>
     <loc>https://gdgaiforscience.github.io/Build-with-AI/session/01-intro.html</loc>
-    <lastmod>2026-03-04T03:00:31.661Z</lastmod>
+    <lastmod>2026-05-04T10:19:46.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gdgaiforscience.github.io/Build-with-AI/session/03-agents.html</loc>
+    <lastmod>2026-05-04T10:19:46.311Z</lastmod>
   </url>
 </urlset>
