@@ -34,7 +34,7 @@ format:
     code-overflow: wrap
     respect-user-color-scheme: true
     theme:
-      light: flatly
-      dark: darkly
+      light: [flatly, custom.scss]
+      dark: [darkly, custom.scss]
 
 
