@@ -45,11 +45,13 @@ div.sourceCode {
 /* 2. THE CUSTOM "RAW" STYLE
    Overrides the default only when {.raw} is present */
 div.sourceCode.raw {
-  background-color: var(--code-block-raw-bg);
+  /* background-color: var(--code-block-raw-bg); */
     border-left-color: var(--code-block-raw-border);
 }
 
 /* Optional: Change text color inside the raw block */
-div.sourceCode.raw code {
+/* div.sourceCode.raw code {
   color: var(--code-block-raw-text);
 }
+
+*/

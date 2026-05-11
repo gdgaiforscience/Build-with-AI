@@ -16,7 +16,7 @@ FYI, this only has to be done once. And has already been done. Now just fork thi
 Build the workshop files locally with 
 ```
 git clone  
-cd Antigravity
+cd Build-with-AI
 quarto render index.qmd 
 git commit -am "New build"
 git push
