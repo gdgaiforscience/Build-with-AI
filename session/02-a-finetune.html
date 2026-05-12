@@ -365,11 +365,6 @@ gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
   <li><a href="#large-language-models-llms" id="toc-large-language-models-llms" class="nav-link" data-scroll-target="#large-language-models-llms">🤖 Large Language Models (LLMs)</a></li>
   <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">🟢 Get started</a></li>
   <li><a href="#example-1-fine-tuning-gemma-with-keras-on-a-tpu" id="toc-example-1-fine-tuning-gemma-with-keras-on-a-tpu" class="nav-link" data-scroll-target="#example-1-fine-tuning-gemma-with-keras-on-a-tpu">🎯 Example 1: Fine-Tuning Gemma with Keras on a TPU</a></li>
-  <li><a href="#data-loading-and-preparation" id="toc-data-loading-and-preparation" class="nav-link" data-scroll-target="#data-loading-and-preparation">Data Loading and Preparation</a></li>
-  <li><a href="#loading-the-pre-trained-model" id="toc-loading-the-pre-trained-model" class="nav-link" data-scroll-target="#loading-the-pre-trained-model">Loading the Pre-Trained Model</a></li>
-  <li><a href="#test-before-fine-tuning-establish-a-baseline" id="toc-test-before-fine-tuning-establish-a-baseline" class="nav-link" data-scroll-target="#test-before-fine-tuning-establish-a-baseline">Test Before Fine-Tuning (Establish a Baseline)</a></li>
-  <li><a href="#compile-and-fine-tune-the-model" id="toc-compile-and-fine-tune-the-model" class="nav-link" data-scroll-target="#compile-and-fine-tune-the-model">Compile and Fine-Tune the Model</a></li>
-  <li><a href="#test-after-fine-tuning" id="toc-test-after-fine-tuning" class="nav-link" data-scroll-target="#test-after-fine-tuning">Test After Fine-Tuning</a></li>
   <li><a href="#example-2-gpt-2" id="toc-example-2-gpt-2" class="nav-link" data-scroll-target="#example-2-gpt-2">🗣 Example 2: GPT-2</a></li>
   <li><a href="#example-3-transformers" id="toc-example-3-transformers" class="nav-link" data-scroll-target="#example-3-transformers">🦾 Example 3: Transformers</a></li>
   <li><a href="#adapt-this-for-your-research" id="toc-adapt-this-for-your-research" class="nav-link" data-scroll-target="#adapt-this-for-your-research">🔬 Adapt This For Your Research</a></li>
@@ -520,9 +515,8 @@ gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-</section>
-<section id="data-loading-and-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="data-loading-and-preparation">Data Loading and Preparation</h2>
+<section id="data-loading-and-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-loading-and-preparation">Data Loading and Preparation</h3>
 <p>An LLM needs to be trained on structured examples. For a question-answering task, this means clear pairs of “prompts” (questions) and “responses” (answers). We’ll load the <a href="https://www.kaggle.com/datasets/gpreda/medquad">medquad</a> dataset, which contains medical questions and answers, and then create a small, targeted subset for our task.</p>
 <div id="cell-8" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load and subset the data for training</span></span>
@@ -574,6 +568,7 @@ gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
+</section>
 <section id="format-the-data-for-the-llm" class="level3">
 <h3 class="anchored" data-anchor-id="format-the-data-for-the-llm">Format the Data for the LLM</h3>
 <p>We want to train OUR model on a dataset of prompt-response pairs. We’ll write a simple function to convert our DataFrame into the dictionary format <strong>required</strong> by the model we choose to use. For best results, you should format the prompt and response to match the template the model was originally trained on. This often involves special tokens like <code>'&lt;start_of_turn&gt;user'</code> and<code>'&lt;start_of_turn&gt;model'</code>. Check the <a href="https://ai.google.dev/gemma/docs/core/prompt-structure">Gemma model card</a> for details.</p>
@@ -598,9 +593,8 @@ gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
 <span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>formatted_data <span class="op">=</span> format_data(df_subset)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-</section>
-<section id="loading-the-pre-trained-model" class="level2">
-<h2 class="anchored" data-anchor-id="loading-the-pre-trained-model">Loading the Pre-Trained Model</h2>
+<section id="loading-the-pre-trained-model" class="level3">
+<h3 class="anchored" data-anchor-id="loading-the-pre-trained-model">Loading the Pre-Trained Model</h3>
 <p>Now, we’ll load the pre-trained Gemma model. We are using a Gemma3CausalLM, which is a “Causal Language Model.” This means it works by predicting the very next word (or “token”) in a sequence based on the words that came before it. This is the fundamental mechanism behind text generation.</p>
 <div id="cell-12" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Gemma3 model</span></span>
@@ -668,8 +662,8 @@ normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normaliz
 </div>
 </div>
 </section>
-<section id="test-before-fine-tuning-establish-a-baseline" class="level2">
-<h2 class="anchored" data-anchor-id="test-before-fine-tuning-establish-a-baseline">Test Before Fine-Tuning (Establish a Baseline)</h2>
+<section id="test-before-fine-tuning-establish-a-baseline" class="level3">
+<h3 class="anchored" data-anchor-id="test-before-fine-tuning-establish-a-baseline">Test Before Fine-Tuning (Establish a Baseline)</h3>
 <p>It’s crucial to see how the model performs before we fine-tune it. This gives us a baseline to measure our improvements against. We will ask it a question about our topic and see what its general knowledge provides.</p>
 <div id="cell-14" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a prompt</span></span>
@@ -762,8 +756,8 @@ The answer is that it is a condition where the body's ability to produce enough 
 </div>
 </div>
 </section>
-<section id="compile-and-fine-tune-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="compile-and-fine-tune-the-model">Compile and Fine-Tune the Model</h2>
+<section id="compile-and-fine-tune-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="compile-and-fine-tune-the-model">Compile and Fine-Tune the Model</h3>
 <p>Now we need to enable our model to be modified. Then we need to “compile” the model with our training options. Then we can calll .fit() to begin fine-tuning on our data.</p>
 <div id="cell-17" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable Low-Rank Adaptation (LoRA) for parameter efficient fine-tuning.</span></span>
@@ -796,8 +790,8 @@ The answer is that it is a condition where the body's ability to produce enough 
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fine-tuning complete!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="test-after-fine-tuning" class="level2">
-<h2 class="anchored" data-anchor-id="test-after-fine-tuning">Test After Fine-Tuning</h2>
+<section id="test-after-fine-tuning" class="level3">
+<h3 class="anchored" data-anchor-id="test-after-fine-tuning">Test After Fine-Tuning</h3>
 <p>Now, we ask the exact same prompt to our newly fine-tuned model. The hope is that its answer will be <del>better, more accurate</del> closer to what we have trained the model to do.</p>
 <div id="cell-21" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Testing generation from the fine-tuned model:"</span>)</span>
@@ -812,6 +806,7 @@ The answer is that it is a condition where the body's ability to produce enough 
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Save the model to disk!</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>causal_lm.save_to_preset(<span class="st">"./my-model-ft"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
 </section>
 <section id="example-2-gpt-2" class="level2">
 <h2 class="anchored" data-anchor-id="example-2-gpt-2">🗣 Example 2: GPT-2</h2>
@@ -846,7 +841,7 @@ The answer is that it is a condition where the body's ability to produce enough 
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>causal_lm.<span class="bu">compile</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-28" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>causal_lm.fit(formatted_data_gpt2, epochs<span class="op">=</span><span class="dv">10</span>, batch_size<span class="op">=</span><span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>causal_lm.fit(formatted_data_gpt2, epochs<span class="op">=</span><span class="dv">10</span>, batch_size<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-29" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try again with fine tuned model</span></span>
@@ -858,7 +853,7 @@ The answer is that it is a condition where the body's ability to produce enough 
 <p>For this example we use a popular library for advanced NLP work, <a href="https://huggingface.co/docs/transformers/en/index">Hugging Face Transformers</a>. This library is extremely powerful and provides fine-grained control over the entire process. The workflow is more verbose than Keras but is the standard in many research and production environments.</p>
 <p><em>This example is configured for use with GPU environment in Kaggle or Colab</em></p>
 <div id="cell-31" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>U torchao<span class="op">==</span><span class="fl">0.17.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>U torchao<span class="op">==</span><span class="fl">0.17.0</span> peft<span class="op">==</span><span class="fl">0.19.1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-32" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> kagglehub</span>
@@ -890,16 +885,12 @@ The answer is that it is a condition where the body's ability to produce enough 
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The tokenizer converts human-readable text into a sequence of numerical tokens.</span></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(model_id)</span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure pad_token is set (Gemma models sometimes don't have it set by default)</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> tokenizer.pad_token <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    tokenizer.pad_token <span class="op">=</span> tokenizer.eos_token</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the pre-trained model. Let transformers default to SDPA (Scaled Dot Product Attention) automatically.</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co"># `device_map="cuda"` explicitly tells the library to load the model onto the first available GPU.</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> AutoModelForCausalLM.from_pretrained(</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>    model_id,</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    device_map<span class="op">=</span><span class="st">"cuda"</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the pre-trained model. Let transformers default to SDPA (Scaled Dot Product Attention) automatically.</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># `device_map="cuda"` explicitly tells the library to load the model onto the first available GPU.</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> AutoModelForCausalLM.from_pretrained(</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    model_id,</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    device_map<span class="op">=</span><span class="st">"cuda"</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-36" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Load and Prepare the Data ---</span></span>
