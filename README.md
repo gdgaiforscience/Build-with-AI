@@ -1,9 +1,9 @@
 # Build with AI
 AI for Science - Build with AI workshop series to supercharge your scientific workflows and pipelines.
 
-Modify `antigravity.qmd` to update the tutorial pages.
+Modify `index.qmd` and files in `./sessions` to update the tutorial pages.
 
-Modify `styles.css` and `_quarto.yml` to change the look and feel of the rendered page.
+Modify `styles.css`, `custom.scss` and `_quarto.yml` to change the look and feel of the rendered pages.
 
 They will be rendered at: https://gdgaiforscience.github.io/Build-with-AI/
 
