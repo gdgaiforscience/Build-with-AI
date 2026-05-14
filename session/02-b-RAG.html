@@ -472,9 +472,9 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </script>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="3">
+<div id="cell-5" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the Gemma3 LLM model, the paraphrase embedding model, and a dataset to build our knowledge base</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> kagglehub.model_download(<span class="st">"keras/gemma3/keras/gemma3_instruct_270m"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> kagglehub.model_download(<span class="st">"keras/gemma3/keras/gemma3_instruct_270m/4"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>path_embedding_model <span class="op">=</span> kagglehub.model_download(<span class="st">"astrobutter/paraphrase-minilm-l3-v2/pyTorch/default"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># path_embedding_model = kagglehub.model_download("srg9000/all-minilm-l6-v2/transformers/default") </span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># path_embedding_model = kagglehub.model_download("google/embeddinggemma/transformers/embeddinggemma-300m") #emedding takes 1 hour</span></span>
@@ -593,12 +593,12 @@ What is (are) Anemia in Chronic Kidney Disease ? Anemia is a condition in which 
 <section id="step-3-the-generation---answering-the-question" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-the-generation---answering-the-question">Step 3: The “Generation” - Answering the Question</h2>
 <p>Now that we have retrieved relevant information, we pass it to an LLM (like Gemma) to formulate a final answer.</p>
-<div id="cell-15" class="cell" data-execution_count="8">
+<div id="cell-15" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">## --- Load the Pre-trained Language Model ---</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># We load the base Gemma model. No fine-tuning is needed for RAG.</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Loading Gemma3CausalLM model..."</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>gemma_lm <span class="op">=</span> keras_hub.models.Gemma3CausalLM.from_preset(<span class="st">"gemma3_instruct_270m"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>gemma_lm <span class="op">=</span> keras_hub.models.Gemma3CausalLM.from_preset(path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Loading Gemma3CausalLM model...</code></pre>
 </div>

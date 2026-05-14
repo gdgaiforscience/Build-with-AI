@@ -470,9 +470,9 @@ gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
 </script>
 </div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="3">
+<div id="cell-3" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download models and data from Kaggle</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>path_gemma <span class="op">=</span> kagglehub.model_download(<span class="st">"keras/gemma3/keras/gemma3_instruct_270m"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>path_gemma <span class="op">=</span> kagglehub.model_download(<span class="st">"keras/gemma3/keras/gemma3_instruct_270m/4"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>path_gpt <span class="op">=</span> kagglehub.model_download(<span class="st">"keras/gpt2/keras/gpt2_base_en"</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>path_data <span class="op">=</span> kagglehub.dataset_download(<span class="st">"gpreda/medquad"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -481,7 +481,7 @@ gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># jax 0.7.2 and keras-hub 0.29.0 seem to work</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install -U pip -q</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install -U "jax[tpu]"==0.10.0 -q</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install keras-hub==0.29.0 -U -q</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install keras<span class="op">-</span>hub<span class="op">==</span><span class="fl">0.29.0</span> <span class="op">-</span>U <span class="op">-</span>q</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Environment Setup for Keras with JAX on a TPU ---</span></span>
