@@ -1199,11 +1199,14 @@ Querying API: https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&am
 <span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a session</span></span>
-<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a>session_master <span class="op">=</span> <span class="cf">await</span> session_service_master.create_session(</span>
-<span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a>    app_name<span class="op">=</span>report_agent.name,</span>
-<span id="cb39-49"><a href="#cb39-49" aria-hidden="true" tabindex="-1"></a>    user_id<span class="op">=</span><span class="st">"geo_workshop_user"</span>,</span>
-<span id="cb39-50"><a href="#cb39-50" aria-hidden="true" tabindex="-1"></a>    session_id<span class="op">=</span><span class="st">"report_001"</span></span>
-<span id="cb39-51"><a href="#cb39-51" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a>user_id <span class="op">=</span> <span class="st">"geo_workshop_user"</span></span>
+<span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a>session_id <span class="op">=</span> <span class="st">"report_001"</span></span>
+<span id="cb39-49"><a href="#cb39-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-50"><a href="#cb39-50" aria-hidden="true" tabindex="-1"></a>session_master <span class="op">=</span> <span class="cf">await</span> session_service_master.create_session(</span>
+<span id="cb39-51"><a href="#cb39-51" aria-hidden="true" tabindex="-1"></a>    app_name<span class="op">=</span>report_agent.name,</span>
+<span id="cb39-52"><a href="#cb39-52" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> user_id,</span>
+<span id="cb39-53"><a href="#cb39-53" aria-hidden="true" tabindex="-1"></a>    session_id <span class="op">=</span> session_id</span>
+<span id="cb39-54"><a href="#cb39-54" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>🤖 Agent: 'earthquake_report_agent' created!</code></pre>
 </div>
@@ -1214,8 +1217,8 @@ Querying API: https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&am
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">🗣️  User Query: '</span><span class="sc">{</span>user_query<span class="sc">}</span><span class="ss">'"</span>)</span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the agent</span></span>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>response_generator_master <span class="op">=</span> runner_master.run(</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    user_id<span class="op">=</span>user_id,</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    session_id<span class="op">=</span><span class="st">"report_001"</span>,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> user_id,</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    session_id <span class="op">=</span> session_id,</span>
 <span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    new_message<span class="op">=</span>Content(parts<span class="op">=</span>[Part(text<span class="op">=</span>user_query)], role<span class="op">=</span><span class="st">"user"</span>)</span>
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -1486,7 +1489,7 @@ Querying API: https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&am
 <span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Reader: Reads the findings, extracts text, saves to state['paper_content']</span></span>
 <span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>reader_agent <span class="op">=</span> Agent(</span>
 <span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"reader_agent"</span>,</span>
-<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-3-flash"</span>,</span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
 <span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">"Reads the PDF."</span>,</span>
 <span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We inject the previous agent's output using {research_findings}</span></span>
 <span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>    instruction<span class="op">=</span><span class="st">"""</span></span>
