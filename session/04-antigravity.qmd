@@ -14,12 +14,11 @@ Google’s code editor, [**Antigravity**](https://antigravity.google/product/ant
 
 This workshop is designed for researchers of all coding skill levels. We will walk through simple, research-grounded examples to help you fit the Antigravity framework immediately to your own projects. 
 
-**Instructor:**
+**Instructor:** Dr Nate Butterworth (Google XWF)
 
-* Dr Nate Butterworth (Google XWF)
+**Date:** May 28, 2026
 
-**Date:**
-* May 28, 2026
+**Recording:** Coming Soon.
 
 ## Workshop Goals / Learning Objectives:
 
@@ -126,6 +125,8 @@ Write the conclusion based on the data and review about the link between Earthqu
 ```
 
 ## Example 6: Targeted literature review and summary
+
+AI pre-trained memories are static can hallucinate specific data points or citations. To help counteract this, Antigravity supports the Model Context Protocol (MCP),an open standard that allows you to securely connect your AI agent directly to live, external databases without needing to write custom API wrappers. For this workflow, add the MCP server [`arxiv-mcp-server`](https://github.com/blazickjp/arxiv-mcp-server) to Antigravity's settings. By explicitly routing the agent through an MCP server, you force it to ground its analysis in verified, retrieved full-text data rather than relying on a general web search or its pre-trained memory. This ensures maximum scientific rigor and reproducible data extraction.
 
 ```bash
 Perform a systematic search across ArXiv, PubMed, and Semantic Scholar for 'Non-pharmacological interventions for Neuroplasticity (2023-2026)'. Extract the N-values, p-values, and effect sizes from the top 40 relevant papers. Use Python to aggregate this data into a structured CSV. Identify and highlight 'Evidence Contradictions' where two or more papers report conflicting results for the same intervention. Generate a summary identifying the 'consensus gap' and suggest three specific hypotheses for future experimental validation.
