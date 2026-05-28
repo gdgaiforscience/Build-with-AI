@@ -50,7 +50,7 @@ As our speakers are donating their time, we want to ensure a full and engaged ev
 
 ## Recordings
 
-* [Python AI and fundamentals](https://youtu.be/ENOLU_7OkE0?si=vV2xUHHVPhLrKR5_)
+* [Python AI and fundamentals](https://youtu.be/ENOLU_7OkE0)
 * [Tailoring LLMs: RAG and Fine-Tuning](https://youtu.be/pdTt57_pBSo)
-* AI Agents for Research ... coming soon.
+* [AI Agents for Research](https://youtu.be/T1MiU5A7STU)
 * AI-Assisted Research with Antigravity ... coming soon.

@@ -14,12 +14,14 @@ Google’s code editor, [**Antigravity**](https://antigravity.google/product/ant
 
 This workshop is designed for researchers of all coding skill levels. We will walk through simple, research-grounded examples to help you fit the Antigravity framework immediately to your own projects. 
 
-**Instructor:**
+**Instructors:** 
 
-* Dr Nate Butterworth (Google XWF)
+* [Dr Nate Butterworth](https://www.linkedin.com/in/nathaniel-butterworth-72003877/) 
+* [Dr Rahul Sundar](https://www.linkedin.com/in/rahul-sundar-311a6977/)
 
-**Date:**
-* May 28, 2026
+**Date:** May 28, 2026
+
+**Recording:** Coming Soon.
 
 ## Workshop Goals / Learning Objectives:
 
@@ -64,7 +66,41 @@ Make sure you have tools (like Python) installed and the correct environments ar
 run the tests in conda environment oztemp
 ```
 
-Keep the agent working with more complex tasks:
+### Skills and Rules
+
+Or you can add a [Skill](https://antigravity.google/docs/skills) or a [Rule](https://antigravity.google/docs/rules-workflows) to guide the agent to your preferences and needs.
+
+#### Skill
+Skills are a *standard* (they work [across all coding agents](https://openskills.cc/)) for equipping agents with tools and knowledge.
+
+Add skills to to your local workspace `.agents/skills/<my-skill>/` they all have to be called `SKILL.md`.
+````SKILL.md
+---
+name: python environment
+description: always work with the conda environment gdg when a user needs Python
+---
+## Usage & Guidelines
+- When a user needs to use Python (and no other environments are specified) use this skill.
+- Before executing any Python scripts, commands, or installations, ensure that the `gdg` conda environment is active.
+- If the environment is not active, initialize and activate it using:
+  ```bash
+  conda activate gdg
+  ```
+````
+
+The names and descriptions of your skills are loaded automatically into your agent context (i.e. they cost you tokens) but it won't read the details until it is invoked.
+
+> Be careful downloading skills from the internet - be wary of malicious prompt injection.
+
+#### Rules
+
+Rules act like system prompts and can force/guide the agent. Add the following as a rule the try a simple prompt.
+```
+# Coding tasks
+Preference R code as the default coding language for analysis and vizualisation.
+```
+
+Now keep the agent working with more complex tasks:
 ```bash
 Please extend this to make an animated heatmap of Australia's Annual Mean Max Temperature
 ```
@@ -125,24 +161,81 @@ Prompt 4:
 Write the conclusion based on the data and review about the link between Earthquakes and Lunar cycles
 ```
 
-## Example 6: Targeted literature review and summary
+## Example 6: Grant writing assistance
+
+Download a [document to work with](https://docs.google.com/document/d/1UQ9EvahDCUCJ9rXnI7KbWtaoWI_aD5H_zopckZvJ-uM/edit?usp=sharing). Then try a prompt like the following.
 
 ```bash
-Perform a systematic search across ArXiv, PubMed, and Semantic Scholar for 'Non-pharmacological interventions for Neuroplasticity (2023-2026)'. Extract the N-values, p-values, and effect sizes from the top 40 relevant papers. Use Python to aggregate this data into a structured CSV. Identify and highlight 'Evidence Contradictions' where two or more papers report conflicting results for the same intervention. Generate a summary identifying the 'consensus gap' and suggest three specific hypotheses for future experimental validation.
+Read the draft grant proposal in @grant_v1.docx. Cross-reference all technical claims in the 'Methodology' section with existing literature using search. Identify any 'Innovation Claims' that are actually already solved in recent 2026 publications. Check the budget section against the proposed computational requirements (e.g., GPU hours for training the specified model) and flag if the requested funds are insufficient. Suggest three peer-reviewed citations that would strengthen the 'Prior Work' section.
 ```
 
-## Example 7: Grant writing assistance
+## Example 7: MCP servers
+
+AI pre-trained memories are static must spend tokens to create new tools to do what you want. To help counteract this, Antigravity supports the Model Context Protocol (MCP), an open standard that allows you to securely connect your AI agent directly to live, external databases without needing to re-invent ways to connect and interact with data and the world. 
+
+For this workflow we will activate the Antigravity built in `BigQuery` MCP servers. From the Agent panel select ```Manage MCP Servers``` and select the `Install` button. Then simply give it a prompt:
 
 ```bash
-Read the draft grant proposal in grant_v1.docx. Cross-reference all technical claims in the 'Methodology' section with existing literature using search. Identify any 'Innovation Claims' that are actually already solved in recent 2025 publications. Check the budget section against the proposed computational requirements (e.g., GPU hours for training the specified model) and flag if the requested funds are insufficient. Suggest three peer-reviewed citations that would strengthen the 'Prior Art' section.
+Find tables related Remote Sensing
 ```
 
-## Example 8: Building a PINN Testbench with Antigravity
+You could then ask more questions, and rather then writing NEW code the agent will utilise pre-exissting tools to help you. 
+
+## Example 7: Targeted literature review with custom MCP server
+
+For this workflow, we will add the MCP server [`arxiv-mcp-server`](https://github.com/blazickjp/arxiv-mcp-server) to Antigravity's settings. First install it with:
+
+```uv tool install arxiv-mcp-server
+```
+
+> This assumes you have `uv` installed (a Python installer)
+
+Next add the config info to your Antigravity file
+
+```MCP Servers > Manage MCP Servers > View raw config
+``` 
+
+and then paste in the details:
+
+```
+{
+  "mcpServers": {
+    "arxiv": {
+      "command": "uvx",
+      "args": ["arxiv-mcp-server"]
+    }
+  }
+}
+```
+
+By explicitly routing the agent through an MCP server, you force it to ground its analysis in verified, retrieved full-text data rather than relying on a general web search or its pre-trained memory. This ensures maximum scientific rigor and reproducible data extraction. Finally ask a question:
+
+```bash
+Perform a systematic search across ArXiv for 'Non-pharmacological interventions for Neuroplasticity (2023-2026)'. Extract the N-values, p-values, and effect sizes from the top 3 relevant papers. Use Python to aggregate this data into a structured CSV. Identify and highlight 'Evidence Contradictions' where two or more papers report conflicting results for the same intervention. Generate a summary identifying the 'consensus gap' and suggest three specific hypotheses for future experimental validation.
+```
+
+## Example 8: Leverage Science Skills
+
+Google recently released a bunch of Antigravity Skills for different [scientific workflows](https://github.com/google-deepmind/science-skills/tree/main). We can turn them on specifically (they just install to our global skill directory). Then ask a question which will force the use of the skill.
+
+Find them in:
+`Antigravity Settings > Customizations > Build With Google Plugins`
+
+Then run the prompt.
+```bash
+Fetch and analyze the AlphaFold structure for UniProt ID P00520, including pLDDT and domain boundary analysis.
+```
+
+> Try this before and after adding the Skills to compare the different approaches of the agent.
+
+
+## Example 9: Building a PINN Testbench with Antigravity
 
 This document outlines how to use **Antigravity** (your agentic coding assistant) to build a robust, modular Physics Informed Neural Network (PINN) framework from scratch.
 
 ### 1. Defining the Core Architecture
 Start by asking Antigravity to create a modular structure. A professional PINN testbench requires separation of concerns:
+
 - **`data.py`**: Handles geometry and point sampling (Collocation, Boundary, Initial conditions).
 - **`model.py`**: Defines the neural network (MLP, ResNet, etc.).
 - **`solver.py`**: The "engine" that computes PDE residuals using automatic differentiation and manages the training loop.
@@ -158,6 +251,7 @@ Once the basics are working, use Antigravity to implement state-of-the-art compo
 
 #### Linear Attention ResNet
 Ask Antigravity to implement a more complex architecture like a Linear Attention ResNet to handle global dependencies efficiently.
+
 - **Layers**: Multi-head or Linear Attention.
 - **Input Projection**: High-dimensional coordinate injection.
 
@@ -171,6 +265,7 @@ Update the solver to support model checkpointing (save best) and TensorBoard log
 
 ### 3. Creating a Frontend Dashboard
 Wrap the framework in a **Streamlit** UI to make it interactive. This allows:
+
 - Launching training runs with varying hyperparameters.
 - Monitoring live logs and CPU/Resource usage.
 - Navigating and comparing past results.
@@ -192,7 +287,7 @@ Build a Streamlit dashboard that lets me launch 'train_burgers.py' in the backgr
 * Try using the Gemini chat interface to make your prompts more strategic, for example you can use this meta-prompt: 
 ```
 # Role
-You are a Lead Prompt Engineer specializing in Google's Antigravity IDE and it's agentic capabilities. Your goal is to write a high-fidelity, instruction-dense prompt that will force Antigravity Agents to utilize their maximum reasoning depth and agentic research tools. 
+Act as a Lead Prompt Engineer specializing in Google's Antigravity IDE and it's agentic capabilities. Your goal is to write a high-fidelity, instruction-dense prompt that will force Antigravity Agents to utilize their maximum reasoning depth and agentic research tools. 
 # Task
 Write a well-crafted and optimal prompt for input into the Antigravity so the returned output perfectly answers the following query: 
 "[INSERT QUESTION/TOPIC HERE]"
