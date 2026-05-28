@@ -367,9 +367,9 @@ gtag('config', 'G-344M4P3CHH', { 'anonymize_ip': true});
   <li><a href="#example-5-multi-agent-orchestration" id="toc-example-5-multi-agent-orchestration" class="nav-link" data-scroll-target="#example-5-multi-agent-orchestration">Example 5: Multi-agent orchestration</a></li>
   <li><a href="#example-6-grant-writing-assistance" id="toc-example-6-grant-writing-assistance" class="nav-link" data-scroll-target="#example-6-grant-writing-assistance">Example 6: Grant writing assistance</a></li>
   <li><a href="#example-7-mcp-servers" id="toc-example-7-mcp-servers" class="nav-link" data-scroll-target="#example-7-mcp-servers">Example 7: MCP servers</a></li>
-  <li><a href="#example-7-targeted-literature-review-with-custom-mcp-server" id="toc-example-7-targeted-literature-review-with-custom-mcp-server" class="nav-link" data-scroll-target="#example-7-targeted-literature-review-with-custom-mcp-server">Example 7: Targeted literature review with custom MCP server</a></li>
-  <li><a href="#example-8-leverage-science-skills" id="toc-example-8-leverage-science-skills" class="nav-link" data-scroll-target="#example-8-leverage-science-skills">Example 8: Leverage Science Skills</a></li>
-  <li><a href="#example-9-building-a-pinn-testbench-with-antigravity" id="toc-example-9-building-a-pinn-testbench-with-antigravity" class="nav-link" data-scroll-target="#example-9-building-a-pinn-testbench-with-antigravity">Example 9: Building a PINN Testbench with Antigravity</a></li>
+  <li><a href="#example-8-targeted-literature-review-with-custom-mcp-server" id="toc-example-8-targeted-literature-review-with-custom-mcp-server" class="nav-link" data-scroll-target="#example-8-targeted-literature-review-with-custom-mcp-server">Example 8: Targeted literature review with custom MCP server</a></li>
+  <li><a href="#example-9-leverage-science-skills" id="toc-example-9-leverage-science-skills" class="nav-link" data-scroll-target="#example-9-leverage-science-skills">Example 9: Leverage Science Skills</a></li>
+  <li><a href="#example-10-building-a-pinn-testbench-with-antigravity" id="toc-example-10-building-a-pinn-testbench-with-antigravity" class="nav-link" data-scroll-target="#example-10-building-a-pinn-testbench-with-antigravity">Example 10: Building a PINN Testbench with Antigravity</a></li>
   <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts">Final thoughts</a></li>
   </ul></li>
   </ul>
@@ -513,8 +513,8 @@ unzip human-face-emotions.zip</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Find</span> tables related Remote Sensing</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You could then ask more questions, and rather then writing NEW code the agent will utilise pre-exissting tools to help you.</p>
 </section>
-<section id="example-7-targeted-literature-review-with-custom-mcp-server" class="level2">
-<h2 class="anchored" data-anchor-id="example-7-targeted-literature-review-with-custom-mcp-server">Example 7: Targeted literature review with custom MCP server</h2>
+<section id="example-8-targeted-literature-review-with-custom-mcp-server" class="level2">
+<h2 class="anchored" data-anchor-id="example-8-targeted-literature-review-with-custom-mcp-server">Example 8: Targeted literature review with custom MCP server</h2>
 <p>For this workflow, we will add the MCP server <a href="https://github.com/blazickjp/arxiv-mcp-server"><code>arxiv-mcp-server</code></a> to Antigravity’s settings. First install it with:</p>
 <p><code>uv tool install arxiv-mcp-server</code></p>
 <blockquote class="blockquote">
@@ -534,8 +534,8 @@ unzip human-face-emotions.zip</code></pre>
 <p>By explicitly routing the agent through an MCP server, you force it to ground its analysis in verified, retrieved full-text data rather than relying on a general web search or its pre-trained memory. This ensures maximum scientific rigor and reproducible data extraction. Finally ask a question:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Perform</span> a systematic search across ArXiv for <span class="st">'Non-pharmacological interventions for Neuroplasticity (2023-2026)'</span>. Extract the N-values, p-values, and effect sizes from the top 3 relevant papers. Use Python to aggregate this data into a structured CSV. Identify and highlight <span class="st">'Evidence Contradictions'</span> where two or more papers report conflicting results for the same intervention. Generate a summary identifying the <span class="st">'consensus gap'</span> and suggest three specific hypotheses for future experimental validation.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="example-8-leverage-science-skills" class="level2">
-<h2 class="anchored" data-anchor-id="example-8-leverage-science-skills">Example 8: Leverage Science Skills</h2>
+<section id="example-9-leverage-science-skills" class="level2">
+<h2 class="anchored" data-anchor-id="example-9-leverage-science-skills">Example 9: Leverage Science Skills</h2>
 <p>Google recently released a bunch of Antigravity Skills for different <a href="https://github.com/google-deepmind/science-skills/tree/main">scientific workflows</a>. We can turn them on specifically (they just install to our global skill directory). Then ask a question which will force the use of the skill.</p>
 <p>Find them in: <code>Antigravity Settings &gt; Customizations &gt; Build With Google Plugins</code></p>
 <p>Then run the prompt.</p>
@@ -544,8 +544,8 @@ unzip human-face-emotions.zip</code></pre>
 <p>Try this before and after adding the Skills to compare the different approaches of the agent.</p>
 </blockquote>
 </section>
-<section id="example-9-building-a-pinn-testbench-with-antigravity" class="level2">
-<h2 class="anchored" data-anchor-id="example-9-building-a-pinn-testbench-with-antigravity">Example 9: Building a PINN Testbench with Antigravity</h2>
+<section id="example-10-building-a-pinn-testbench-with-antigravity" class="level2">
+<h2 class="anchored" data-anchor-id="example-10-building-a-pinn-testbench-with-antigravity">Example 10: Building a PINN Testbench with Antigravity</h2>
 <p>This document outlines how to use <strong>Antigravity</strong> (your agentic coding assistant) to build a robust, modular Physics Informed Neural Network (PINN) framework from scratch.</p>
 <section id="defining-the-core-architecture" class="level3">
 <h3 class="anchored" data-anchor-id="defining-the-core-architecture">1. Defining the Core Architecture</h3>
