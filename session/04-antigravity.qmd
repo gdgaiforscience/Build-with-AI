@@ -181,7 +181,7 @@ Find tables related Remote Sensing
 
 You could then ask more questions, and rather then writing NEW code the agent will utilise pre-exissting tools to help you. 
 
-## Example 7: Targeted literature review with custom MCP server
+## Example 8: Targeted literature review with custom MCP server
 
 For this workflow, we will add the MCP server [`arxiv-mcp-server`](https://github.com/blazickjp/arxiv-mcp-server) to Antigravity's settings. First install it with:
 
@@ -214,7 +214,7 @@ By explicitly routing the agent through an MCP server, you force it to ground it
 Perform a systematic search across ArXiv for 'Non-pharmacological interventions for Neuroplasticity (2023-2026)'. Extract the N-values, p-values, and effect sizes from the top 3 relevant papers. Use Python to aggregate this data into a structured CSV. Identify and highlight 'Evidence Contradictions' where two or more papers report conflicting results for the same intervention. Generate a summary identifying the 'consensus gap' and suggest three specific hypotheses for future experimental validation.
 ```
 
-## Example 8: Leverage Science Skills
+## Example 9: Leverage Science Skills
 
 Google recently released a bunch of Antigravity Skills for different [scientific workflows](https://github.com/google-deepmind/science-skills/tree/main). We can turn them on specifically (they just install to our global skill directory). Then ask a question which will force the use of the skill.
 
@@ -229,7 +229,7 @@ Fetch and analyze the AlphaFold structure for UniProt ID P00520, including pLDDT
 > Try this before and after adding the Skills to compare the different approaches of the agent.
 
 
-## Example 9: Building a PINN Testbench with Antigravity
+## Example 10: Building a PINN Testbench with Antigravity
 
 This document outlines how to use **Antigravity** (your agentic coding assistant) to build a robust, modular Physics Informed Neural Network (PINN) framework from scratch.
 
