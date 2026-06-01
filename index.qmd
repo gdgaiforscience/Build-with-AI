@@ -19,7 +19,7 @@ Join the community (in [Australia](https://gdg.community.dev/gdg-ai-for-science-
 
 
 ## When 
-Every Thursday in May:
+Every Thursday in May 2026:
 
 * May 7: [Python and AI fundamentals](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-python-and-ai-fundamentals/)
 * May 14: [Tailoring LLMs: RAG and Fine-Tuning](https://gdg.community.dev/events/details/google-gdg-ai-for-science-australia-presents-build-with-ai-tailoring-llms-rag-and-fine-tuning/)
@@ -53,4 +53,4 @@ As our speakers are donating their time, we want to ensure a full and engaged ev
 * [Python AI and fundamentals](https://youtu.be/ENOLU_7OkE0)
 * [Tailoring LLMs: RAG and Fine-Tuning](https://youtu.be/pdTt57_pBSo)
 * [AI Agents for Research](https://youtu.be/T1MiU5A7STU)
-* AI-Assisted Research with Antigravity ... coming soon.
+* [AI-Assisted Research with Antigravity](https://youtu.be/DxheR7YCH5I) 
