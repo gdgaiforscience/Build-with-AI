@@ -21,9 +21,9 @@ This workshop is designed for researchers of all coding skill levels. We will wa
 
 **Date:** May 28, 2026
 
-**Recording:** Coming Soon.
+**Recording:** [https://youtu.be/DxheR7YCH5I](https://youtu.be/DxheR7YCH5I)
 
-## Workshop Goals / Learning Objectives:
+## Workshop Goals / Learning Objectives
 
 * Automatically visualise and explore your datasets.
 * Wrangle and clean your data “instantly”.
@@ -39,6 +39,9 @@ Before the session please download and install **Antigravity IDE** for your syst
 - Basic coding knowledge will be helpful.
 - A motivation to experiment
 - Familiarity with Visual Studio Code editor will be helpful otherwise this will be a crash-course
+- [Python/conda](https://conda-forge.org/download/) to complete most demos or sub for [R](https://www.r-project.org/) or your favourite language.
+- [Node.js](https://nodejs.org/) to use BigQuery in the MCP demo.
+- [uv package manager](https://docs.astral.sh/uv/getting-started/installation/) to run the MCP demos.
 
 
 ## Get started
